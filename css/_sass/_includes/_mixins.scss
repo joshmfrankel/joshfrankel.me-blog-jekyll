@@ -1,0 +1,77 @@
+
+/**
+ * New Responsive Sticky Footer
+ * CSS tricks
+ *
+ */
+@mixin sticky-footer($footer-height, $container-selector, $footer-selector) {
+
+    html, body {
+        height: 100%;
+    }
+
+    #{$container-selector} {
+        min-height: 100%;
+        margin-bottom: -$footer-height;
+
+        &:after {
+            content: "";
+            display: block;
+            height: $footer-height;
+        }
+    }
+
+    #{$footer-selector} {
+        height: $footer-height;
+    }
+
+}
+
+/**
+ * Responsive Breakpoint Mixin
+ */
+@mixin breakpoint ($max-width) {
+        @media (max-width: $max-width) { @content; }
+}
+
+/**
+ * Pseudo Content Mixin
+ *
+ * Allows for easy psuedo elements
+ *
+ */
+@mixin pseudo-content ($pseudo, $url, $width, $height, $position: 0 0 no-repeat) {
+        // Make sure the parent is relative or else we will be positioning
+        // absolute for the pseudo element on the page width
+        position: relative;
+
+        &:#{$pseudo} {
+                background: url($url) $position;
+                content: '';
+                display: inline-block;
+                position: absolute;
+                height: $height;
+                width: $width;
+        }
+}
+
+/**
+ * Center element ontop of another
+ */
+@mixin center-child-img ($child-width, $child-height, $parent-width, $parent-height) {
+
+        $child-x-pos: $child-width / 2;
+        $child-y-pos: $child-height / 2;
+        $parent-x-pos: $parent-width / 2;
+        $parent-y-pos: $parent-height / 2;
+
+        $x-pos: $parent-x-pos - $child-x-pos;
+        $y-pos: $parent-y-pos - $child-y-pos;
+
+        $x-percent: ($x-pos / $parent-width) * 100;
+        $y-percent: ($y-pos / $parent-height) * 100;
+
+        left: $x-percent * 1%;
+        top: $y-percent * 1%;
+
+}

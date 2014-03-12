@@ -1,0 +1,22 @@
+// customize bootstrap variables here:
+$font-family-sans-serif: 'Lato', sans-serif;
+$headings-font-weight: 300;
+$brand-primary: #94ad30;
+$font-size-base: 16px;
+
+// Site variables
+$green: #94ad30;
+$header-gray: #f8f8f8;
+$gray: #eee;
+$light-gray: #a6a6a6;
+$dark-gray: #6a6a6a;
+
+// Includes
+@import "variables";
+@import "bootstrap";
+@import "_includes/mixins.scss";
+
+// Sections
+@import "_core/base.scss";
+@import "_sections/header.scss";
+@import "_sections/listing.scss";

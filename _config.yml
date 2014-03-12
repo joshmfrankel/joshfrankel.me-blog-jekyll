@@ -1,0 +1,12 @@
+# Site Meta
+name: Blog of Josh Frankel
+description: Explosions! Ranting! and Web Development!
+url: blog.joshfrankel.me
+
+# Site Settings
+paginate: 10
+permalink: /:year/:categories/:title
+
+# Plugins
+markdown: redcarpet
+pygments: true
