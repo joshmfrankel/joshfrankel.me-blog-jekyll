@@ -1,0 +1,25 @@
+---
+layout: post
+title: Why is Modernizr.load broken for the development version
+categories:
+- Articles
+tags:
+- js
+- plugins
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  Hide SexyBookmarks: '0'
+  Hide OgTags: '0'
+  _wp_old_slug: modernizr-load-broken-for-development-version
+  _spost_short_title: ''
+---
+The current development version of Modernizr does not contain the yepnope.js bundle.  This is somewhat tricky as there is no error message or notification except in the console debugger.
+
+<pre class="lang:js" title="Console output">
+Uncaught TypeError: Object #<Object> has no method 'load'
+</pre>
+
+Luckily, there is an easy fix for this.  Just download the production version and make sure to mark the checkbox called Modernizr.load(yepnope).  Fixed!

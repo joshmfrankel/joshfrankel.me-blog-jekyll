@@ -1,0 +1,23 @@
+---
+layout: post
+title: 5 Wordpress Avatar Tricks
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _yoast_wpseo_linkdex: '0'
+  _edit_last: '1'
+  _spost_short_title: ''
+---
+ Default Avatars
+<pre class="lang:php decode:true " title="Default Avatars" >add_filter( 'avatar_defaults', 'new_default_avatar' );
+
+function new_default_avatar ( $avatar_defaults ) {
+        //Set the URL where the image file for your avatar is located
+        $new_avatar_url = 'http://swift.mighty-site.com/filebin/images/wordpress/default_wordpress_avatar.jpg';
+        //Set the text that will appear to the right of your avatar in Settings&gt;&gt;Discussion
+        $avatar_defaults[$new_avatar_url] = 'Your New Default Avatar';
+        return $avatar_defaults;
+}</pre> 

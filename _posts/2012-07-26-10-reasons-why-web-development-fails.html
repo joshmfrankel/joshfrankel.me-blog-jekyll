@@ -1,0 +1,91 @@
+---
+layout: post
+title: 11 reasons why web development fails
+categories:
+- Articles
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_focuskw: ''
+  _yoast_wpseo_title: ''
+  _yoast_wpseo_metadesc: ''
+  _yoast_wpseo_meta-robots-noindex: '0'
+  _yoast_wpseo_meta-robots-nofollow: '0'
+  _yoast_wpseo_meta-robots-adv: none
+  _yoast_wpseo_sitemap-include: "-"
+  _yoast_wpseo_sitemap-prio: "-"
+  _yoast_wpseo_canonical: ''
+  _yoast_wpseo_redirect: ''
+  _yoast_wpseo_metakeywords: ''
+  _syntaxhighlighter_encoded: '1'
+---
+<ol>
+
+<li>Project plans are just an inconvenience.</li>
+
+<li>You don't unit test</li>
+<hr />
+<p>If you are going to focus on learning one item on this list do yourself a favor and LEARN UNIT TESTING!  I can't emphasize enough how useful and powerful a simple unit test can be.  Proper unit testing eases development stress...prevents you from chasing down errors...makes refactoring possible...produces cleaner code...  It literally will make your life easier when developing.</p>
+<p>Here is a quick java example using jUnit</p>
+
+[java]
+public class MyClass() {
+     public int factorial(int value) {
+          if(value == 1)
+            return 1;
+          else
+            return(value * (factorial(value-1));
+     }
+}
+[/java]
+<p>And its unit test</p>
+[java]
+@Test
+public int testFactorial(int value) {
+     MyClass unitTester = new MyClass();
+     
+     //The Bread and Butter of Unit Testing
+     assertEquals(24, unitTester.factorial(4));  //True
+
+     assertEquals(4, unitTester.factorial(4));   //False
+}
+[/java]
+
+<p>If the test passes then you have the green light for refactoring, otherwise you will get a red error message.  Now this seems like a trivial example but say you were to build upon the factorial example to include additional features.  Having this base unit test in place would ensure that the new features don't break the core logic.  Pretty nifty.</p>
+
+<li>Hey, you!  Quit thinking!  Don't go outside the box.</li>
+<hr />
+<p>Creative problem solving is by far the best 
+
+<li>It should work for the next 5 years?  Let someone else worry about it.</li>
+<hr />
+<p>Building an application that will run indefinitely is impossible.  Building an application that will be scalable is <mark title="but preferred">difficult</mark> but possible.  Building an application that will work for the next month is easy.  Unfortunately, when all of your projects are designed to work on short time spans, you WILL end up with a backlog of fixes and updates.  Which WILL cut from new feature development.  And let me tell you maintaining an application that is not designed with a 5 year goal in mind is destined for failure and/or developer burnout.</p>
+
+<li>Comments, what comments?</li>
+<hr />
+<p>Ever write a particular inspired piece of code, then come back to a couple days later and forget how it even works?  Enter comments</p>
+
+<p>Not writing comments for your code is like cramming for an exam.  At the time you have all the knowledge you need to pass but as soon as the exam is over you purge all of it.  Same thing happens when you write code.  Now when I say comment your code, I mean do it succinctly.  ONLY COMMENT IF THE LOGIC DOES NOT MAKE SENSE INTUITIVELY!  Otherwise you risk bloating your code significantly.</p>
+
+<li>Miscommunication.</li>
+
+<li>Understanding the basic concept is not important</li>
+
+<li>You are naive enough to think there shouldn't be errors.</li>
+<p>This one takes not unit testing one step farther.  If you are arrogant enough to think that you produce error free, clean code the first try, you are probably not observant enough to catch the missing semicolon or the sql injection vulnerability, or the file upload exploit, or the development code to drop all tables,  or the cross-site scripting hole...  Get the picture.  There are literally too many things that have to mesh together while developing to think that you won't run into errors.  It also makes you look like a <mark title="Go Healthy Environment, wait...">green</mark> developer when you say it...</p>
+
+<li>Who needs source control?  Just load the app into the server's memory.</li>
+<hr />
+<p>Git on the bandwagon and do yourself a favor and git some type of version control.  This will save you tons of headache (and anyone else you develop with).  Now I have a couple recommendation but I will let you git the version control of your choice free from my bias...</p>
+
+<li>You don't have or follow a standard</li>
+
+<li></li>
+
+</ol>
+
+<p>So what makes your skin crawl?  Is it the guy next to you explaining how iterative SQL is the best thing since sliced bread?  Or the individual who uses data types to prefix every <mark title="Gotta love Hungarian type notation">strWord</mark>?</p>
+<p>What's your programming pet peeve? </p>

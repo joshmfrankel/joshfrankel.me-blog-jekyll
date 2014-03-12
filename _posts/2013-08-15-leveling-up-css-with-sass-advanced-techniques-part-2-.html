@@ -1,0 +1,223 @@
+---
+layout: post
+title: Leveling up CSS with Sass (Advanced Techniques - Part 2)
+categories:
+- Articles
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _yoast_wpseo_linkdex: '0'
+  _series_part: '2'
+  _spost_short_title: ''
+  _edit_last: '1'
+---
+<em>Lets recap what we learned in part 1 of Leveling up CSS with SASS</em>
+
+First we learned how we setup a Sass programming environment using Scout. Next we learned about using variables to store values for consistency and later usage. Lastly, we utilized nesting to create specificity on CSS rules that makes logical sense.
+
+In part two of the series we will delve into some more advanced techniques such as: Mixins Vs. Placeholders, Functions, Conditionals, Calculations, and String Interpolation.
+<h3>Mixins Vs. Placeholders</h3>
+So nesting and variables are great and awesome, but where SASS really starts to shine is with Mixins and Placeholders. These two techniques allow you to pre-build blocks of SASS styles that can then be applied to elements simply by including the correct Mixin or Placeholder within the specific style.
+<h4>Mixins</h4>
+A Mixin is similar to a method in languages like PHP. It performs a single action and can accept parameters that modify parts of its result. Mixins are defined using the @mixin syntax followed by curly braces which contain the styles to be applied. For parameters Mixins use parenthesis like other languages. When calling a defined Mixin the @include [mixin-name]; syntax is used.
+<pre class="lang:sass decode:true" title="Mixins">// The Mixin definition
+@mixin center-img ($width, $height) {
+
+     height: $height; // The height parameter
+     left: 50%;
+     position: absolute;
+     width: $width; // The width parameter
+
+}
+
+// The SASS code using the mixin
+#container {
+    .header img {
+
+         // Include the defined mixin
+         @include center-img (960px, 350px);
+    }
+    .title img {
+
+         // Include the defined mixin
+         @include center-img (300px, 150px);
+    }
+}
+
+//////////////////////////////////////////
+// The Compiled CSS from the SASS Mixin //
+//////////////////////////////////////////
+#container .header img {
+
+     height: 350px
+     left: 50%;
+     position: absolute;
+     width: 960px;
+
+}
+#container .title img {
+
+     height: 150px
+     left: 50%;
+     position: absolute;
+     width: 300px;
+
+}</pre>
+As you can see from above the two rules utilize the SASS Mixin to center an image. Some of you may have noticed that to properly center an image we also need to use margin. Not to fear I will cover this later when we discuss calculations and functions.
+
+<h4>Placeholders</h4>
+<p>Now placeholders and mixins are very similiar at first glance. They both contain chunks of reusable style code, their definitions are never compiled as only the output is compiled inside the style rule, and they both allow you to nest other rules inside of them. However, this is where the similarities end.</p>
+
+<p>Placeholders, unlike Mixins, do not allow for the usage of parameters. Placeholders do exactly what they say, they hold your place. In addition to not being able to use parameters, placeholders use slightly different syntax.</p>
+
+<p>When defining placeholders you use %[placeholderName]. Also when calling a placeholder you must use the @extend %[placeholderName] directive.</p>
+
+<pre class="lang:sass decode:true " title="Placeholders" >// The Placeholder
+%center-img {
+    height: 350px;
+    left: 50%;
+    position: absolute;
+    width: 960px;
+}
+
+// The SASS code using the placeholder
+#container {
+    .header img {
+
+         // Extend the placeholder
+         @extend %center-img;
+    }
+    .title img {
+
+         // Extend the placeholder
+         @extend %center-img;
+    }
+}
+
+////////////////////////////////////////////////
+// The Compiled CSS from the SASS Placeholder //
+////////////////////////////////////////////////
+#container .header img,
+#container .title img {
+
+     height: 350px
+     left: 50%;
+     position: absolute;
+     width: 960px;
+
+}</pre> 
+
+<h3>So when do I use them?</h3>
+<p>Right about now you are probably thinking, "Mixins are so much better with their sexy parameters. Never going to use you placeholders". This is basically what I thought, and subsequently wrote off using placeholders for a while. It wasn't until a co-worker showed me how awesome placeholder are that I started to use them.</p>
+
+<blockquote>Placeholders allow chunks of content to be reused and DO NOT duplicate styles like Mixins do.</blockquote>
+
+<p>If you look closer at the compiled code and compare the two you will notice the difference. The Mixin compilation has two different CSS rules with the same style code inside them. The placeholder compilation only builds the style code once and combines the two selectors. This is the power of placeholders over mixins.</p>
+
+<p>If you are building something that needs to be reused again and again and doesn't have to be dynamic then you should be using placeholders. Otherwise, if your needs are dynamic reusability then a Mixin might work better for you. Using placeholders as much as you can keeps your code DRY. Here is a quick diagram to outline some of the differences.</p>
+
+[caption id="attachment_816" align="alignnone" width="800"]<a href="http://blog.joshmfrankel.com/wp-content/uploads/2013/08/Sass-Part-2-New-Page-1.png"><img src="http://blog.joshmfrankel.com/wp-content/uploads/2013/08/Sass-Part-2-New-Page-1.png" alt="Sass: Mixins Vs. Placeholders" width="800" height="912" class="size-full wp-image-816" /></a> Sass: Mixins Vs. Placeholders[/caption]
+
+<h3>Functions</h3>
+<p>These almost identical to how functions behave in languages like php. They can take in parameters to dynamically change their results... Sounds like a Mixin, right? The difference between functions and mixins is that a function <strong>MUST</strong> use the @return keyword to return a value.</p>
+
+<p>This means that only one value can be returned from a function. Functions can be called by using the function name inside the value of a CSS property</p>
+
+ 
+<pre class="lang:sass decode:true " title="Functions" >// Calculate REM value for font (based on font-size:62.5% on the body)
+@function calcREM ($number) {
+    @return (strip-units($number)/10) * 1rem;
+}
+
+// Call the function
+h1 {
+    font-size: calcREM(20px);
+}
+
+//////////////////
+// Compiled CSS //
+//////////////////
+h1 {
+    font-size: 2.0rem;
+}</pre> 
+
+<h3>Defaults, Conditionals, Calculations, and String Interpolation</h3>
+<p>Let's build a new Mixin that uses all of these concepts.</p><p><strong>Defaults</strong> refer to parameter fallback values. These allow the developer to specify values that occur if nothing is used as the parameter.</p><p>A <strong>conditional</strong> allows for dynamic results based on a value. Sass supports IF, ELSE, ELSE IF, FOR, EACH, and WHILE.</p>
+<p><strong>Calculations</strong> follow the same process as a normal programming languages.</p>
+<p><strong>String Interpolation</strong> is similiar to a variable variable in php, or dynamically naming properties. String interpolation uses #{} to enclose items that should be explicitly output.</p>
+
+
+<p>Lets go back to our Mixin center-img and fix some of its issues</p>
+ 
+<pre class="lang:sass decode:true " title="A Mixin with defaults, conditionals, calculations" >// Make sure parent element is position: relative;
+// Notice the defaults listed here after the parameters: horizontal, 12px, 20px
+@mixin absCenterImg ($width, $height, $centerType: horizontal, $font-size: 12px, $line-height: 20px, $class: temp) {
+
+    position: absolute;
+    height: $height;
+    width: $width;
+
+    // String interpolation prevents SASS from trying to divide font-size by line-height on this line
+    // Instead it will output font: 12px/20px;
+    font: #{$font-size}/#{$line-height};
+
+    a.#{$class} {
+        color: red;
+    }
+
+    // SASS Conditional Directive
+    @if $centerType == vertical {
+        top: 50%;
+        
+        // A SASS Calculation
+        margin-top: -($height/2);
+
+    } @else if $centerType == horizontal {
+        left: 50%;
+
+        // Another Calucation
+        margin-left: -($width/2);
+    } @else if $centerType == both {
+        left: 50%;
+
+        // Yet another calc
+        margin-left: -($width/2);
+        top: 50%;
+
+        // Last calculation
+        margin-top: -($height/2);
+    }
+
+}
+
+// The style code calling the mixin
+#container img {
+     @include center-img(960px, 350px, horizontal, 14px, 21px, foo);
+}
+
+//////////////////
+// Compiled CSS //
+//////////////////
+#container img {
+
+     position: absolute;
+     height: 350px;
+     width: 960px;
+     font: 14px/21px;
+     
+     // The string interpolated class
+     a.foo {
+         color: red;
+     }
+
+     left: 50%
+     
+     // Calculated value
+     margin-left: -175px;
+}
+
+</pre> 
+<p>So that's the end of lesson two. We learned the difference between <strong>Mixins</strong> and <strong>Placeholders</strong> and when to use them. <strong>Functions</strong> are useful for performing calculations and returning a single value. Parameters can have <strong>default</strong> values applied to them to enhance functionality. <strong>Conditionals</strong> control the flow of logic. And <strong>String Interpolation</strong> is useful for variable variables and preventing calculations.</p>
+<p>There are still plenty of different techniques to be used with SASS. I encourage you to take a look at the <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">Sass Documentation</a> for more skills. For the next part I will go through some basic Project Organization techniques with SASS.</p>
