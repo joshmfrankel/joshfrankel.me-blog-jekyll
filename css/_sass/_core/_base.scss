@@ -2,3 +2,8 @@
 html {
     border-top: 5px solid $green;
 }
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}

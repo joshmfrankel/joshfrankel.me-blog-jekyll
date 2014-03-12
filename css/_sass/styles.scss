@@ -3,6 +3,7 @@ $font-family-sans-serif: 'Lato', sans-serif;
 $headings-font-weight: 300;
 $brand-primary: #94ad30;
 $font-size-base: 16px;
+$container-lg: 1140px;
 
 // Site variables
 $green: #94ad30;
@@ -20,3 +21,4 @@ $dark-gray: #6a6a6a;
 @import "_core/base.scss";
 @import "_sections/header.scss";
 @import "_sections/listing.scss";
+@import "_sections/post.scss";
