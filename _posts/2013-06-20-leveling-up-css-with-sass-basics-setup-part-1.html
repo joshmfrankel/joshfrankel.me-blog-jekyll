@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Leveling up CSS with Sass (Basics & Setup - Part 1)
+title: Leveling up CSS with Sass (Basics &amp; Setup - Part 1)
 categories:
 - Articles
 tags: []
@@ -12,7 +12,7 @@ meta:
   _edit_last: '1'
   _series_part: '1'
   _spost_short_title: ''
-  _wpas_mess: 'Leveling up #CSS with #Sass.  Part 1: Basics & Setup'
+  _wpas_mess: 'Leveling up #CSS with #Sass.  Part 1: Basics &amp; Setup'
   _wpas_done_all: '1'
   _wpas_skip_2245243: '1'
   _wpas_skip_2245252: '1'
@@ -101,7 +101,7 @@ a {
 <p>There it is, Sass at its most basic. By defining a variable before at the beginning of a file it can be reused later to create DRY code.</p>
 <h3>Nesting {<small>nesting</small>}</h3>
 <p>Nesting in Sass works logically and just makes sense.  By placing rules inside one another they inherit their parent rule selectors. By nesting Sass rules you also give yourself a visual cue for selectors that are further down in the DOM.</p><blockquote><strong>Pro Tip:</strong> While nesting selectors is awesome, don't get carried away with them. If a single class selector will suffice there is no need to nest it within html body etc. Too much nesting will create unnecessary code bloat.</blockquote>
- 
+
 <pre class="lang:sass decode:true " title="Sass: Nesting demo" >
 // Top level nested style
 .twitter-feed {
@@ -122,8 +122,8 @@ a {
             color: #00FF00;
         }
     }
-}</pre> 
- 
+}</pre>
+
 <pre class="lang:css decode:true " title="CSS: Compiled Nested Sass" >.twitter-feed {
     float: right;
     width: 300px;
@@ -137,7 +137,7 @@ a {
 .twitter-feed p a {
     text-decoration: none;
     color: #00FF00;
-}</pre> 
+}</pre>
 
 
 By this point you have setup a Sass environment and created your very first Sass file. In the <strong>next article</strong> I will go through more advanced techniques for using Sass including mixins, string interpolation, placeholders, extending, and calculations.

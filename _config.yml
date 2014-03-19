@@ -1,9 +1,18 @@
-# Site Meta
+# Basic Config
 name: Blog of Josh Frankel
 description: Explosions! Ranting! and Web Development!
 url: blog.joshfrankel.me
 
+# Author
+author:
+    name: Josh Frankel
+    github: https://github.com/joshmfrankel
+    stackoverflow: http://stackoverflow.com/users/906974/josh-frankel
+    twitter: https://twitter.com/Joshmfrankel
+    linkedin: http://www.linkedin.com/in/joshmfrankel
+
 # Site Settings
+url: blog.joshfrankel.me
 paginate: 10
 permalink: /:year/:categories/:title
 
