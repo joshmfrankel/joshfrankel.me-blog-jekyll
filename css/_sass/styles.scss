@@ -26,3 +26,9 @@ $dark-gray: #6a6a6a;
 @import "_sections/meta.scss";
 @import "_sections/listing.scss";
 @import "_sections/post.scss";
+@import "_sections/pagination.scss";
+@import "_sections/footer.scss";
+
+@media only screen and (max-width: $screen-sm) {
+    @import "_sections/responsive.scss";
+}

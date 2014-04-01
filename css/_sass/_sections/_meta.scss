@@ -1,4 +1,9 @@
 .meta {
+    .meta-date,
+    .meta-categories,
+    .meta-tags {
+        display: inline-block;
+    }
     .meta-date {
         color:$light-gray;
         font-style: italic;

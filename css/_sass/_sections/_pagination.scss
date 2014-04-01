@@ -1,0 +1,18 @@
+.pagination {
+    li {
+        span,
+        a {
+            -webkit-transition: background 120ms ease-in;
+            -moz-transition: background 120ms ease-in;
+            -ms-transition: background 120ms ease-in;
+            -o-transition: background 120ms ease-in;
+            transition: background 120ms ease-in;
+        }
+        span {
+            background: #f8f8f8;
+            border: 1px solid #eee;
+            color:#6a6a6a;
+        }
+    }
+
+}

@@ -3,6 +3,11 @@ html {
     border-top: 5px solid $green;
 }
 a {
+    -webkit-transition: color 120ms ease-in;
+    -moz-transition: color 120ms ease-in;
+    -ms-transition: color 120ms ease-in;
+    -o-transition: color 120ms ease-in;
+    transition: color 120ms ease-in;
     &:hover {
         text-decoration: none;
     }
@@ -38,4 +43,7 @@ blockquote {
 
         border: none;
     }
+}
+.container {
+    padding: 0 20px;
 }

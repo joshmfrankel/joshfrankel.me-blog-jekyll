@@ -1,0 +1,17 @@
+---
+layout: blank
+title: Your New Jekyll Site
+---
+
+<div class="scrape-this">
+{% for post in site.posts limit: 3 %}
+
+<article class="col-md-4">
+    <p><span class="glyphicon glyphicon-time"></span>
+    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time></p>
+    <h1><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h1>
+    <p>{{ post.excerpt }}&nbsp;<a href="{{ post.url }}" target="_blank">read more &rsaquo;</a></p>
+</article>
+
+{% endfor %}
+</div>

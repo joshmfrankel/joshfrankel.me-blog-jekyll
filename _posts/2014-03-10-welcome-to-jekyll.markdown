@@ -4,6 +4,7 @@ title:  "Welcome to Jekyll!"
 date:   2014-03-10 17:13:27
 categories: jekyll-update
 tags: [php, css]
+excerpt: "This is a test first post"
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!

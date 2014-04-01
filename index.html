@@ -3,35 +3,14 @@ layout: default
 title: Your New Jekyll Site
 ---
 
-<!--
-
-Check for cateogires
-if not then remove slash /
-
-Check for tags
-if not then remove slash /
-
-also add trailing commas to tags and categories
-
--->
-
     <div class="post-listing">
         {% for post in paginator.posts %}
             <div class="post-single">
                 <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
                 <div class="meta">
                     <p>
-                        <span class="meta-date">{{ post.date | date: "%B %-d, %Y" }}</span>/
-                        <span class="meta-categories">
-                            {% for categories in post.categories %}
-                            <a href="/categories.html#{{ categories }}-ref">{{ categories }}</a>
-                            {% endfor %}
-                        </span>/
-                        <span class="meta-tags">
-                            {% for tag in post.tags %}
-                            <a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>
-                            {% endfor %}
-                        </span>
+                        <time class="meta-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+                        {% include meta_listing type="post" %}
                     </p>
                 </div>
             </div>

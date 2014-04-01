@@ -1,0 +1,23 @@
+
+{% if [include.type].categories.size != 0 %}
+/
+{% endif %}
+
+<span class="meta-categories">
+    {% for categories in [include.type].categories %}
+    <a href="/categories.html#{{ categories }}">{{ categories }}</a>
+    {% endfor %}
+</span>
+
+{% if [include.type].tags.size != 0 %}
+/
+{% endif %}
+
+<span class="meta-tags">
+    {% for tag in [include.type].tags %}
+        <a href="/tags.html#{{ tag }}">{{ tag }}</a>
+        {% if forloop.index != forloop.length %}
+        ,&nbsp;
+        {% endif %}
+    {% endfor %}
+</span>

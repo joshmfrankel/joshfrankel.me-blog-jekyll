@@ -13,7 +13,7 @@ author:
 
 # Site Settings
 url: blog.joshfrankel.me
-paginate: 10
+paginate: 8
 permalink: /:year/:categories/:title
 
 # Plugins

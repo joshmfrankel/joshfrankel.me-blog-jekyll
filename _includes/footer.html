@@ -6,14 +6,21 @@
                         <h3>About the Author</h3>
                         <p>I am obsessed with mastering the newest programming techniques and skills. You can find me constantly pouring over the latest articles and tutorials. When I'm not reading up on web development, I usually am writing about it here, on my blog.</p>
                     </div>
-                    <ul class="social-icons col-md-4">
-                        <li><a href="{{ site.author.github }}"><img src="/img/icons/mono-icons/github.png" alt="Github" /></a></li>
-                        <li><a href="{{ site.author.stackoverflow }}"><img src="/img/icons/mono-icons/stackoverflow.png" alt="Stackoverflow" /></a></li>
-                        <li><a href="{{ site.author.twitter }}"><img src="/img/icons/mono-icons/twitter_bird.png" alt="Twitter" /></a></li>
-                        <li><a href="{{ site.author.linkedin }}"><img src="/img/icons/mono-icons/linkedin.png" alt="LinkedIn" /></a></li>
-                    </ul>
+                    <div class="social-icons-container col-md-4">
+                        <h4>Follow Me</h4>
+                        <ul class="social-icons">
+                            <li><a href="{{ site.author.github }}"><i class="fa fa-github"></i></a></li>
+                            <li><a href="{{ site.author.stackoverflow }}"><i class="fa fa-stack-overflow"></i></a></li>
+                            <li><a href="{{ site.author.twitter }}"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{ site.author.linkedin }}"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
         </div> <!-- End #wrapper -->
+
+        <!-- Scripts -->
+
+        <script src="/js/vendor/lunr.min.js"></script>
     </body>
 </html>
