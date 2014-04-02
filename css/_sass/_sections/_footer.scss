@@ -1,4 +1,10 @@
 footer {
+    &.container {
+
+        @include breakpoint ($screen-md) {
+            padding-bottom: 45px;
+        }
+    }
     .social-icons-container {
         h4 {
             margin-top:24px;

@@ -1,15 +1,21 @@
 # humanstxt.org/
-# The humans responsible & technology colophon
+# The humans responsible & technology
 
-# TEAM
+/* TEAM */
 
-    <name> -- <role> -- <twitter>
+    Web Designer & Developer: Josh Frankel
+    Contact: Josh [at] joshfrankel.me
+    Twitter: joshmfrankel
+    Location: Athens, GA
 
-# THANKS
+/* SPECIAL THANKS */
 
-    <name>
+    Content Editor: Megan Oed
+    Location: Athens, GA
 
-# TECHNOLOGY COLOPHON
+/* SITE */
 
-    HTML5, CSS3
-    jQuery, Modernizr
+    Last update:2014/02/04
+    Language: English
+    Doctype: HTML5
+    Tools: Jekyll, Bootstrap 3.0, Sass, Photoshop, jQuery, Guard, Compass, Sublime Text 3.0 Beta, Git, Google Analytics

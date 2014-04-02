@@ -1,7 +1,6 @@
 # Basic Config
 name: Blog of Josh Frankel
 description: Explosions! Ranting! and Web Development!
-url: blog.joshfrankel.me
 
 # Author
 author:
@@ -15,6 +14,7 @@ author:
 url: blog.joshfrankel.me
 paginate: 8
 permalink: /:year/:categories/:title
+excerpt_separator: <!--more-->
 
 # Plugins
 markdown: redcarpet

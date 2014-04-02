@@ -1,4 +1,12 @@
-
+<!-- <div class="minor well shadow">
+  <h3>Search</h3>
+  <form id="search">
+    <div class="input-append">
+      <input type="search" name="q" id="q" placeholder="Enter keywords..."/>
+      <button class="btn" type="button">GO!</button>
+    </div>
+  </form>
+</div> -->
             <hr />
             <footer class="container">
                 <div class="row">
@@ -22,5 +30,31 @@
         <!-- Scripts -->
 
         <script src="/js/vendor/lunr.min.js"></script>
+        <script src="search.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            $(function() {
+
+              $("#search button").click(function(e) {
+                e.preventDefault();
+                search();
+              });
+              $("#search input").keypress(function(e) {
+                if(e.which == 13) {
+                  e.preventDefault();
+                  search();
+                }
+              });
+            })
+
+            function search() {
+              var result = idx.search($("#search input").val());
+              if(result && result.length > 0) {
+                window.location.replace(result[0].ref);
+              } else {
+                alert("Found nothing");
+              }
+            }
+        </script>
     </body>
 </html>

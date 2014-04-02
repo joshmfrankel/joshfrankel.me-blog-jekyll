@@ -38,7 +38,23 @@ blockquote {
     padding: 22px 25px;
     font-size: 20px;
     font-size: 2.0rem;
+    font-style: italic;
     line-height: 1.5;
+}
+mark {
+    background: none;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    cursor: pointer;
+    -webkit-transition: color 120ms ease-in;
+    -moz-transition: color 120ms ease-in;
+    -ms-transition: color 120ms ease-in;
+    -o-transition: color 120ms ease-in;
+    transition: color 120ms ease-in;
+
+    &:hover {
+        color: lighten(#333, 20%);
+    }
 }
 .highlight {
     border-radius: 2px;

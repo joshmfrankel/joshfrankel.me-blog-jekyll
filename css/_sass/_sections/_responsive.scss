@@ -1,10 +1,29 @@
 
 header {
-    height: 99px;
+    min-height: 99px;
 
     .container {
         .navbar-header {
             margin:0;
+            .navbar-brand {
+                height: auto;
+            }
+        }
+        .navbar-collapse {
+            display: block;
+            float:none;
+            max-height: none;
+
+            .navbar-nav {
+                margin: 7px 0;
+
+                li {
+                    a {
+                        padding:10px 0;
+                        line-height: 25px;
+                    }
+                }
+            }
         }
     }
 }

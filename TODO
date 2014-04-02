@@ -39,11 +39,17 @@ border-bottom: 1px solid #eee;
 .post-listing .post-single h2 { line-height: 1.3 }
    ✔ Integrate with AddThis Smart Layers for pure awesome blogging @done (14-03-26 17:21)
    ✔ Commenting system via Disqus @done (14-03-20 11:21)
+   ✔ humans.txt @done (14-04-01 18:14)
 
 
  ☐ Responsive
-   ☐ Menu tweaks
+   ✔ Menu tweaks @done (14-04-02 12:06)
    ☐ Check mobile devices and pages
+      ☐ Android
+      ☐ Galaxy Tablet
+      ✔ Firefox @done (14-04-02 15:58)
+      ✔ Chrome @done (14-04-02 15:58)
+      ☐ IE9 / 10
 
  ☐ Footer
    ☐ Add Author Image
@@ -52,22 +58,28 @@ border-bottom: 1px solid #eee;
 
  ☐ Post
    ☐ Search system (http://www.divshot.com/blog/web-development/advanced-jekyll-features)
-   ☐ Top 3 Random posts with same tag
    ☐ Utilize tags / categories into meta tags
-     ☐ Post Series (Extra)
+   ☐ Cleanup Posts
+      ☐ Front Matter
+      ☐ Code Snippets
+      ☐ Images
+      ☐ Missing Elements
 
- ☐ Streamline Loading
-   ☐ Sitemap (http://www.divshot.com/blog/web-development/advanced-jekyll-features)
+ ☐ Streamline
+   ✔ Sitemap (http://www.divshot.com/blog/web-development/advanced-jekyll-features) @done (14-04-02 10:39)
    ☐ .htaccess
    ☐ robots.txt
-   ☐ humans.txt
    ☐ Combine javascript and put at bottom of page
 
- ☐ Browser Testing
-   ☐ Iphone
-   ☐ Android
-   ☐ Ipad
-   ☐ Firefox
-   ☐ Chrome
-   ☐ Safari
-   ☐ IE9 / 10
+ ☐ Launch Tasks
+    ☐ Setup subdomain
+    ☐ Grab only the _site folder into the subdomain
+    ☐ Turn on robots.txt for tracking
+    ☐ Google Analytics
+    ☐ Webmaster tools
+
+----------------------------------------------------------------
+
+ ☐ Post-Launch Tasks
+   ☐ Top 3 Random posts with same tag
+   ☐ Post Series (Extra)

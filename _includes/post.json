@@ -1,0 +1,4 @@
+{
+  "id"    : "http://blog.joshfrankel.me{{ post.url }}",
+  "title"   : "{{ post.title }}"
+}
