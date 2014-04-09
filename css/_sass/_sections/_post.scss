@@ -8,6 +8,7 @@
         line-height: 29px;
     }
     .post {
+        margin-bottom: 30px;
         img {
             margin-bottom: 22px;
         }
@@ -16,5 +17,25 @@
     .meta {
         font-size: 16px;
         font-size: 1.6rem;
+    }
+}
+.post-title {
+    .meta {
+        margin-top:10px;
+        color: rgba(#fff, 0.5);
+    }
+    .meta-date,
+    .meta-categories a,
+    .meta-tags a {
+        color:#fff;
+        font-size: 20px;
+    }
+    .meta-categories a,
+    .meta-tags a {
+        font-weight: 700;
+
+        &:hover {
+            color: #61711f;
+        }
     }
 }

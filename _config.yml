@@ -1,5 +1,6 @@
 # Basic Config
 name: Blog of Josh Frankel
+tagline: Web Development simplified
 description: Explosions! Ranting! and Web Development!
 
 # Author
@@ -12,7 +13,7 @@ author:
 
 # Site Settings
 url: blog.joshfrankel.me
-paginate: 8
+paginate: 6
 permalink: /:year/:categories/:title
 excerpt_separator: <!--more-->
 

@@ -2,7 +2,7 @@
 layout: default
 title: Categories by Josh Frankel
 ---
-
+<div class="container">
 {% for category in site.categories %}
   <h2 id="{{ category[0] }}">{{ category[0] | join: "/" }}</h2>
   <ul>
@@ -10,3 +10,4 @@ title: Categories by Josh Frankel
     {% include page_listing %}
   </ul>
 {% endfor %}
+</div>

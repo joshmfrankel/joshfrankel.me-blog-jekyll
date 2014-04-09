@@ -1,14 +1,13 @@
 .post-listing {
-    margin-top:40px;
+    // margin-top:40px;
     .post-single {
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
         h2 {
             font-size: 32px;
             font-size: 3.2rem;
             letter-spacing: 0.035rem;
+            padding-bottom: 5px;
             line-height: 1.3;
-        }
-        .meta {
             border-bottom: 1px solid #eee;
             display: inline-block;
             -webkit-transition: border-color 120ms ease-in;
@@ -16,12 +15,13 @@
             -ms-transition: border-color 120ms ease-in;
             -o-transition: border-color 120ms ease-in;
             transition: border-color 120ms ease-in;
-
+        }
+        .meta {
             p {
-                margin-bottom: 10px;
+                //margin-bottom: 10px;
             }
         }
-        &:hover .meta {
+        &:hover .h2 {
             border-bottom: 1px solid #ccc;
         }
     }

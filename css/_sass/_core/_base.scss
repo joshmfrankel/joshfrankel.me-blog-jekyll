@@ -1,3 +1,4 @@
+@import "compass/css3";
 
 html {
     border-top: 5px solid $green;
@@ -22,6 +23,11 @@ h3 {
     color: #454545;
     font-weight: 700;
     letter-spacing: 0.01em;
+    padding-bottom: 5px;
+    margin-top: 0px;
+}
+h4 {
+    font-weight: 700;
 }
 p {
     letter-spacing: 0.01em;
@@ -57,10 +63,16 @@ mark {
     }
 }
 .highlight {
-    border-radius: 2px;
+    @include border-radius(2px);
+    margin-bottom: 40px;
     pre {
-
         border: none;
+        code {
+            span {
+                font-family: monospace;
+                font-size: 13px;
+            }
+        }
     }
 }
 .container {

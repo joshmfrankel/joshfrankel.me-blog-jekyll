@@ -41,29 +41,21 @@ border-bottom: 1px solid #eee;
    ✔ Commenting system via Disqus @done (14-03-20 11:21)
    ✔ humans.txt @done (14-04-01 18:14)
 
+ ✔ Post @done (14-04-09 18:16)
+   ✔ Utilize tags / categories into meta tags @done (14-04-09 18:16)
+   ✔ Cleanup Posts @done (14-04-09 18:13)
+      ✔ Front Matter @done (14-04-09 18:13)
+      ✔ Code Snippets @done (14-04-09 18:13)
+      ✔ Images @done (14-04-09 18:13)
+      ✔ Missing Elements @done (14-04-09 18:13)
+      layout, title, categories, tags, published, excerpt
 
- ☐ Responsive
-   ✔ Menu tweaks @done (14-04-02 12:06)
-   ☐ Check mobile devices and pages
-      ☐ Android
-      ☐ Galaxy Tablet
-      ✔ Firefox @done (14-04-02 15:58)
-      ✔ Chrome @done (14-04-02 15:58)
-      ☐ IE9 / 10
 
  ☐ Footer
    ☐ Add Author Image
    ☐ Add Google Authorship link
    ☐ Link to Portfolio
 
- ☐ Post
-   ☐ Search system (http://www.divshot.com/blog/web-development/advanced-jekyll-features)
-   ☐ Utilize tags / categories into meta tags
-   ☐ Cleanup Posts
-      ☐ Front Matter
-      ☐ Code Snippets
-      ☐ Images
-      ☐ Missing Elements
 
  ☐ Streamline
    ✔ Sitemap (http://www.divshot.com/blog/web-development/advanced-jekyll-features) @done (14-04-02 10:39)
@@ -80,6 +72,16 @@ border-bottom: 1px solid #eee;
 
 ----------------------------------------------------------------
 
+ ☐ Responsive
+   ✔ Menu tweaks @done (14-04-02 12:06)
+   ☐ Check mobile devices and pages
+      ☐ Android
+      ☐ Galaxy Tablet
+      ✔ Firefox @done (14-04-02 15:58)
+      ✔ Chrome @done (14-04-02 15:58)
+      ☐ IE9 / 10
+
  ☐ Post-Launch Tasks
    ☐ Top 3 Random posts with same tag
    ☐ Post Series (Extra)
+   ☐ Search system (http://www.divshot.com/blog/web-development/advanced-jekyll-features)
