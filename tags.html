@@ -1,7 +1,11 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Tags
+excerpt: All the currently active tags for posts
 ---
+
+{% include hero.html %}
+
 <div class="container">
 {% for tag in site.tags %}
   <h2 id="{{ tag[0] }}">{{ tag[0] | join: "/" }}</h2>

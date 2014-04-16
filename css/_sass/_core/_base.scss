@@ -40,18 +40,21 @@ p {
 }
 blockquote {
     background: rgba(#efefef, 0.3);
-    border-left:5px solid #ddd;
+    border-left:5px solid #E6E6E6;
     padding: 22px 25px;
     font-size: 20px;
     font-size: 2.0rem;
     font-style: italic;
     line-height: 1.5;
 }
+hr {
+    border-top: 1px solid #E6E6E6;
+}
 mark {
     background: none;
-    border-bottom: 1px solid #ddd;
-    color: #333;
-    cursor: pointer;
+    border-bottom: 1px dashed #E6E6E6;
+    color: #666;
+    font-style: italic;
     -webkit-transition: color 120ms ease-in;
     -moz-transition: color 120ms ease-in;
     -ms-transition: color 120ms ease-in;
@@ -59,8 +62,11 @@ mark {
     transition: color 120ms ease-in;
 
     &:hover {
-        color: lighten(#333, 20%);
+        color: lighten(#666, 20%);
     }
+}
+code {
+    white-space: normal;
 }
 .highlight {
     @include border-radius(2px);

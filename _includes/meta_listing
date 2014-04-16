@@ -5,7 +5,7 @@
 
 <span class="meta-categories">
     {% for categories in [include.type].categories %}
-    <a href="/categories.html#{{ categories }}">{{ categories }}</a>
+    <a href="{{ site.url }}/categories.html#{{ categories }}">{{ categories }}</a>
     {% endfor %}
 </span>
 
@@ -15,7 +15,7 @@
 
 <span class="meta-tags">
     {% for tag in [include.type].tags %}
-        <a href="/tags.html#{{ tag }}">{{ tag }}</a>
+        <a href="{{ site.url }}/tags.html#{{ tag }}">{{ tag }}</a>
         {% if forloop.index != forloop.length %}
         ,&nbsp;
         {% endif %}

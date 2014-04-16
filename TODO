@@ -51,24 +51,20 @@ border-bottom: 1px solid #eee;
       layout, title, categories, tags, published, excerpt
 
 
- ☐ Footer
-   ☐ Add Author Image
-   ☐ Add Google Authorship link
-   ☐ Link to Portfolio
+ ✔ Footer @done (14-04-10 17:09)
 
 
- ☐ Streamline
+ ✔ Streamline @done (14-04-10 17:07)
    ✔ Sitemap (http://www.divshot.com/blog/web-development/advanced-jekyll-features) @done (14-04-02 10:39)
-   ☐ .htaccess
-   ☐ robots.txt
-   ☐ Combine javascript and put at bottom of page
+   ✔ .htaccess @done (14-04-10 16:43)
+   ✔ robots.txt @done (14-04-10 16:44)
+   ✔ Combine javascript and put at bottom of page @done (14-04-10 17:07)
 
  ☐ Launch Tasks
-    ☐ Setup subdomain
     ☐ Grab only the _site folder into the subdomain
-    ☐ Turn on robots.txt for tracking
     ☐ Google Analytics
     ☐ Webmaster tools
+    ☐ Add Google Authorship link
 
 ----------------------------------------------------------------
 

@@ -1,7 +1,6 @@
 # Basic Config
-name: Blog of Josh Frankel
+name: Development blog of Josh Frankel
 tagline: Web Development simplified
-description: Explosions! Ranting! and Web Development!
 
 # Author
 author:
@@ -10,9 +9,10 @@ author:
     stackoverflow: http://stackoverflow.com/users/906974/josh-frankel
     twitter: https://twitter.com/Joshmfrankel
     linkedin: http://www.linkedin.com/in/joshmfrankel
+    feedburner: "http://feedburner.google.com/fb/a/mailverify?uri=blogjoshmfrankel&amp;loc=en_US"
 
 # Site Settings
-url: blog.joshfrankel.me
+url: http://joshfrankel.me/blog
 paginate: 6
 permalink: /:year/:categories/:title
 excerpt_separator: <!--more-->

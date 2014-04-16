@@ -7,11 +7,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
-        <meta name="description" content="{{ page.categories }} {{ page.tags }}">
+        <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160}}">
+        <meta name="keywords" content="{{ page.categories }}, {% for tag in page.tags %}{{ tag }}{% if forloop.index != forloop.length %},&nbsp;{% endif %}{% endfor %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap, Modernizr, and styles -->
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="{{ site.url }}/css/styles.css">
 
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lato:300,700,900,300italic,700italic' rel='stylesheet' type='text/css'>
@@ -31,15 +32,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/index.html">Josh<br /><strong>Frankel</strong></a>
+                    <a class="navbar-brand" href="{{ site.url }}/">Josh<br /><strong>Frankel</strong></a>
                 </div>
                 <nav class="navbar-collapse collapse navigation">
                     <ul class="nav navbar-nav">
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/archive.html">Archive</a></li>
-                        <li><a href="/categories.html">Categories</a></li>
-                        <li><a href="/tags.html">Tags</a></li>
-                        <li><a href="/rss.xml"><i class="fa fa-rss-square"></i></a></li>
+                        <li><a href="{{ site.url }}/">Home</a></li>
+                        <li><a href="{{ site.url }}/archive.html">Archive</a></li>
+                        <li><a href="{{ site.url }}/categories.html">Categories</a></li>
+                        <li><a href="{{ site.url }}/tags.html">Tags</a></li>
+                        <li><a href="{{ site.author.feedburner }}"><i class="fa fa-rss-square"></i></a></li>
                     </ul>
                 </nav>
             </div>

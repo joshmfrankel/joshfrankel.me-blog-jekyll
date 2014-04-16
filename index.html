@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Web Development Simplified - Blog by Josh Frankel
+excerpt: A web development blog created by Josh Frankel
 ---
 
     <div class="jumbotron">
@@ -14,7 +15,7 @@ title: Your New Jekyll Site
         <div class="post-listing">
             {% for post in paginator.posts %}
                 <div class="post-single">
-                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
                     <div class="meta">
                         <p>
                             <time class="meta-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
@@ -30,17 +31,16 @@ title: Your New Jekyll Site
             {% if paginator.page == 1 %}
                 <li><span class="active">1</span></li>
             {% else %}
-                <li><a href="/">1</a></li>
+                <li><a href="{{ site.url }}/">1</a></li>
             {% endif %}
 
             {% for count in (2..paginator.total_pages) %}
                 {% if count == paginator.page %}
                     <li><span class="active">{{ count }}</span></li>
                 {% else %}
-                    <li><a href="/page{{ count }}">{{ count }}</a></li>
+                    <li><a href="{{ site.url }}/page{{ count }}/index.html">{{ count }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
 
     </div> <!-- End container -->
-

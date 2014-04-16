@@ -1,7 +1,10 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Archives
+excerpt: An archive of past year's blog posts
 ---
+
+{% include hero.html %}
 
 <div class="container">
   <h2>This year's posts</h2>
@@ -17,7 +20,7 @@ title: Your New Jekyll Site
         <ul class="past">
       {% endif %}
     {% endunless %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
-</div> <!-- end container
+</div> <!-- end container -->

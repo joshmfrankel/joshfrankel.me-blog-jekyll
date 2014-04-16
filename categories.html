@@ -1,7 +1,11 @@
 ---
 layout: default
-title: Categories by Josh Frankel
+title: Categories
+excerpt: All the currently active categories for posts
 ---
+
+{% include hero.html %}
+
 <div class="container">
 {% for category in site.categories %}
   <h2 id="{{ category[0] }}">{{ category[0] | join: "/" }}</h2>
