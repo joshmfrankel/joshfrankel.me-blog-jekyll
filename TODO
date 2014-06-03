@@ -60,24 +60,29 @@ border-bottom: 1px solid #eee;
    ✔ robots.txt @done (14-04-10 16:44)
    ✔ Combine javascript and put at bottom of page @done (14-04-10 17:07)
 
- ☐ Launch Tasks
-    ☐ Grab only the _site folder into the subdomain
-    ☐ Google Analytics
-    ☐ Webmaster tools
-    ☐ Add Google Authorship link
+ ✔ Launch Tasks @done (14-05-28 11:50)
+    ✔ Grab only the _site folder into the subdomain @done (14-05-28 11:50)
+    ✔ Google Analytics @done (14-05-28 11:50)
+    ✔ Webmaster tools @done (14-05-28 11:50)
+    ✔ Add Google Authorship link @done (14-05-28 11:50)
 
 ----------------------------------------------------------------
 
- ☐ Responsive
+ ✔ Responsive @done (14-05-28 11:50)
    ✔ Menu tweaks @done (14-04-02 12:06)
-   ☐ Check mobile devices and pages
-      ☐ Android
-      ☐ Galaxy Tablet
+   ✔ Check mobile devices and pages @done (14-05-28 11:50)
+      ✔ Android @done (14-05-28 11:50)
+      ✔ Galaxy Tablet @done (14-05-28 11:50)
       ✔ Firefox @done (14-04-02 15:58)
       ✔ Chrome @done (14-04-02 15:58)
-      ☐ IE9 / 10
+      ✔ IE9 / 10 @done (14-05-28 11:50)
 
- ☐ Post-Launch Tasks
-   ☐ Top 3 Random posts with same tag
-   ☐ Post Series (Extra)
-   ☐ Search system (http://www.divshot.com/blog/web-development/advanced-jekyll-features)
+ ✔ Post-Launch Tasks @done (14-05-28 11:50)
+   ✔ Top 3 Random posts with same tag @done (14-05-28 11:50)
+   ✔ Post Series (Extra) @done (14-05-28 11:50)
+   ✔ Search system (http://www.divshot.com/blog/web-development/advanced-jekyll-features) @done (14-05-28 11:50)
+
+
+Updates:
+  ☐ Change p tag to 2.0rem and line height 32px;
+  ✔ Write a new blog post @done (14-06-03 14:34)
