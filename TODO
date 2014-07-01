@@ -1,3 +1,22 @@
+Sass Updates:
+  ☐ .highlight {margin-bottom:20px;}
+  ☐ h4 {border-bottom: 1px solid #ccc; padding-bottom: 10px;}
+  ☐  p { font-size:1.7rem; line-height 32px; letter-spacing: 0.05rem; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  ✔ Format Archive.html @done (14-03-26 17:25)
  ✔ Switch to fontAwesome from Mono social icons @done (14-03-26 17:21)
 
@@ -86,3 +105,6 @@ border-bottom: 1px solid #eee;
 Updates:
   ☐ Change p tag to 2.0rem and line height 32px;
   ✔ Write a new blog post @done (14-06-03 14:34)
+
+
+ ☐ oP1gfk!ctQz5
