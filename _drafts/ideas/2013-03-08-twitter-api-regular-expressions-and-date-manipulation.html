@@ -1,0 +1,144 @@
+---
+layout: post
+title: Twitter API, Regular Expressions, and Date Manipulation
+categories:
+- Tutorials
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _series_part: '2'
+  _edit_last: '1'
+---
+So immediately I would like to correct an inaccuracy in part 1. Cacheing $(this) is appropriate to do and considered best practice within the chaining block. Lets go ahead and update our jquery.tweet.js file.
+<pre class="lang:js decode:true" title="What your plugin file should look like">// Wrap the plugin in the jquery dollar sign
+// This will prevent overriding other methods with the same name as the plugin
+// Additionally we can use $ to reference jquery
+(function($){
+
+	// Map the plugin name as a function in jQuery
+	$.fn.tweet = function(options) {
+
+		// Set the default plugin values
+		var defaults = {
+			username: 'the base username',
+			count: 5
+		};
+
+		// Use the jQuery method extend to merge
+		// the defaults and options arrays
+		var options = $.extend({}, defaults, options);
+
+		// Allow chaining by returning the this keyword
+		return this.each(function() {
+
+			// Cache the jQuery keyword
+			var $this = $(this);
+
+		});
+
+	};
+
+})(jQuery);</pre>
+Now that we got that out of the way, we have a cached jquery object that we can use again and again.
+
+Format the Tweet
+CSS3 Transitions
+Conclusion
+
+function getDateDifference(startDate, endDate) {
+
+diff = startDate.getTime() - endDate.getTime();
+
+seconds = diff / 1000;
+
+if (seconds &gt;= 60){
+
+minutes = seconds / 60;
+
+if (minutes &gt;= 60) {
+hours = minutes / 60;
+
+if (hours &gt;= 24) {
+days = Math.floor(hours / 24);
+
+display = (days &gt; 1) ? days + ' days ago' : 'about a day ago';
+
+return display;
+}
+
+hours = Math.floor(hours);
+
+display = (hours &gt; 1) ? hours + ' hours ago' : 'about an hour ago';
+
+return display;
+}
+
+minutes = Math.floor(minutes);
+
+display = (minutes &gt; 1) ? minutes + ' minutes ago' : 'about a minute ago';
+
+return display;
+}
+
+return 'Just now';
+
+}
+
+function formatTweet(text) {
+
+var tweet = '';
+
+var linkRegex = /(((https?:\/\/)|(www1?))\S+)/;
+var hashRegex = /(\#{1}(\w+))/;
+var atRegex = /(\@{1}(\w+))/;
+
+tweet = text
+.replace(linkRegex, '<a href="$1">$1</a>')
+.replace(hashRegex, '<a href="https://twitter.com/search/%23$2">$1</a>')
+.replace(atRegex, '<a href="https://twitter.com/$2">$1</a>');
+
+return tweet;
+}
+
+// set your twitter id
+var user = 'RCrusoeandSon';
+var count = 2;
+
+$.getJSON("http://api.twitter.com/1/statuses/user_timeline/" + user + ".json?count=" + count + "&amp;include_rts=1&amp;callback=?", function(data) {
+
+var link = '';
+var output = '';
+var date = '';
+var now = new Date();
+var regex = /(((https?:\/\/)|(www1?))\S+)/;
+var content;
+
+$.each(data, function(key, value) {
+
+// Build the status link
+link = 'https://twitter.com/' + user + '/status/' + data[key].id_str;
+date = new Date(data[key].created_at);
+
+// Get the difference
+difference = getDateDifference(now, date);
+
+// Look for links and format
+content = formatTweet(data[key].text);
+
+output += '
+
+' + content + '
+
+';
+output += '
+
+<a href="' + link + '">' + difference + '</a>
+
+';
+
+});
+
+$("#tweets").html(output);
+});

@@ -1,0 +1,26 @@
+---
+layout: post
+title: How To Install Chrome OS on your Laptop
+categories:
+- How To
+tags:
+- Chrome OS
+- Install Guide
+published: false
+---
+
+<p>While there are some really useful guides detailing how to install Chrome OS, I found that some of the more basic steps were overlooked. This lead to a number of attempts to install the OS. Additionally, once installed the laptop that I used, Acer Aspire One, kept crashing when it would try to go into sleep mode.</p>
+<!--more-->
+<p>Throughout this article I will refer to ChromeOS as ChromiumOS. ChromeOS is Google's OS that is directly installed onto their Chromebooks while ChromiumOS is an open source disk image to install the operating system on non-Chromebooks. So before we actually dive into the install we first need to make some preparations.</p>
+
+<h3>Step 1: Download ChromiumOS</h3>
+<p>There are two major sources for acquiring a disk image of ChromiumOS: Hexxeh and ArnoldTheBat. While both of these disks are essentially the same I found using Hexxeh's install much easier. Unfortunately, nothing is ever easy and it was an older version that didn't support the Chrome Store. Without the Chrome Store working there really isn't a reason to install ChromiumOS. So we will be using ArnoldTheBat's images.</p>
+<p>You can find the download of the image <a href="http://chromium.arnoldthebat.co.uk/">here</a>. There should be three folders: Daily, Special, and Weekly. Choose the daily folder before moving on. Inside the folder there are three types of disk images: CARMOS, Camd64OS, and Cx86OS. CARMOS refers to the ARM processor architecture, Camd64OS is for 64-bit systems, and Cx86OS is for 32-bit systems. <strong>Make sure you choose the correct download for your system.</strong> Otherwise you will run into errors or turn you laptop into a brick (temporarily).</p>
+
+<h3>Step 2: Burn disk image to USB drive</h3>
+<p>Next we are going to burn the newly downloaded image to our flash drive. You will need a specialized program called Win32 Disk Imager which can be downloaded <a href="http://sourceforge.net/projects/win32diskimager/">here</a>. Once installed choose the disk image and set the drive to the letter corresponding to the flash drive and hit write. Now wait...</p>
+<h3>Step 3: Start into Chromium OS</h3>
+<p>Place the flash drive into the laptop you wish to load Chromium onto and start it up. During the boot phase of the computers startup their should be an option like "Press f12 to change boot order". Press this and select the USB drive to boot directly from the USB.</p>
+<p>Once Chromium has booted up you will need to fill out some basic information (wifi credentials, google profile, profile picture) and then it will boot to the desktop. Congratulations you are half way there.</p>
+<h3>Step 4: Install Chromium</h3>
+<p>
