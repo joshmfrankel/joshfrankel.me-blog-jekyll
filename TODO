@@ -1,7 +1,17 @@
 Sass Updates:
-  ☐ .highlight {margin-bottom:20px;}
-  ☐ h4 {border-bottom: 1px solid #ccc; padding-bottom: 10px;}
-  ☐  p { font-size:1.7rem; line-height 32px; letter-spacing: 0.05rem; }
+  ✔ .highlight {margin-bottom:20px;} @done (14-07-03 11:41)
+  ✔ h4 {border-bottom: 1px solid #ccc; padding-bottom: 10px;} @done (14-07-03 11:41)
+  ✔  p { font-size:1.7rem; line-height 32px; letter-spacing: 0.05rem; } @done (14-07-03 11:41)
+  ✔ h4 {padding-top: 5px; padding-bottom: 5px;} @done (14-07-22 09:57)
+ ✔ h4 remove - border @done (14-07-22 09:57)
+ ✔ .highlight {margin: 30px 0 !important;} @done (14-07-22 09:58)
+ ✔ h3 {padding-top:5px;} @done (14-07-22 09:58)
+   ✔ h3 - remove display inline-block width100% padding-top22px; @done (14-07-22 09:58)
+ ✔ detail page a {border-bottom: 1px solid #94ad30} @done (14-07-22 10:00)
+ ✔ acronym, mark { border-bottom: 1px dashed #333; cursor: help;} @done (14-07-22 10:00)
+ ✔ .post-title .meta-categories a:hover, .post-title .meta-tags a:hover { color: #272822; } @done (14-07-22 10:01)
+ ✔ .post-listing .post-single h2 {font-size: 3.6rem;} @done (14-07-22 10:01)
+ ✔ (home page) .meta {font-size:1.7rem;} @done (14-07-22 10:02)
 
 
 

@@ -23,14 +23,12 @@ h3 {
     color: #454545;
     font-weight: 700;
     letter-spacing: 0.01em;
+    padding-top: 5px;
     padding-bottom: 5px;
-    display: inline-block;
-    width:100%;
 }
 h4 {
     font-weight: 700;
-    border-bottom: 1px solid #E6E6E6;
-    padding-bottom: 10px;
+    padding: 0 5px;
 }
 p {
     letter-spacing: 0.01em;
@@ -41,6 +39,16 @@ ol,
 p {
     margin-bottom: 22px;
 }
+.highlight .err {
+    color: #f92672 !important;
+    background-color: none !important;
+    background: none !important;
+}
+acronym,
+mark {
+    border-bottom: 1px dashed #333;
+    cursor: help;
+}
 blockquote {
     background: rgba(#efefef, 0.3);
     border-left:5px solid #E6E6E6;
@@ -49,6 +57,14 @@ blockquote {
     font-size: 2.0rem;
     font-style: italic;
     line-height: 1.5;
+
+    nav {
+        a {
+            font-size: 17px;
+            font-size: 1.7rem;
+            display: block;
+        }
+    }
 }
 hr {
     border-top: 1px solid #E6E6E6;
@@ -73,7 +89,7 @@ code {
 }
 .highlight {
     @include border-radius(2px);
-    margin-bottom: 20px;
+    margin: 30px 0;
     pre {
         border: none;
         code {

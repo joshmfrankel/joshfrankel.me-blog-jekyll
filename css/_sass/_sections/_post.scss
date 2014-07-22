@@ -12,6 +12,9 @@
         img {
             margin-bottom: 22px;
         }
+        a {
+            border-bottom: 1px dashed #94ad30;
+        }
     }
     .meta {
         font-size: 16px;
@@ -38,7 +41,7 @@
         font-weight: 700;
 
         &:hover {
-            color: #61711f;
+            color: #272822;
         }
     }
 }
