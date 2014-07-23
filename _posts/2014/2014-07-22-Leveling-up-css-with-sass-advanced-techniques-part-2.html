@@ -7,7 +7,7 @@ tags: [Sass]
 published: true
 ---
 
-<p>It has been a while since the last Sass article in this series, so before jumping in a quick refresher from the last article. We covered the setup and compilation of Sass apps including: Guard, Compass, Prepross, and Scout. I showed off variables and style nesting. And we talked about why Sass is so awesome. In this article we are going to go through some more advanced techniques such as: Functions, Mixins, Placeholders, Parent selector, Calculations, and conditional statements.</p>
+<p>Since the last Sass article in this series was published over a year ago, here is a quick refresher. We covered the setup of Sass apps including: Guard, Compass, Prepross, and Scout. There was also info on variables and rule nesting. And we talked about why Sass is so awesome. In this article we are going to go through some more advanced techniques specifically: Functions, Mixins, Placeholders, Parent selector, Calculations, and conditional statements.</p>
 <!--more-->
 
 <blockquote>This is the second article in a series.
@@ -17,13 +17,13 @@ published: true
     </nav>
 </blockquote>
 
-<p>At its core, Sass is focused on writing efficient CSS without repeating yourself. Variables allow for a single location, or source of truth, on specific styles or values. They are easily reusable across multiple files. The next step to removing repetition in your styles are functions, mixins, and placeholders.</p>
+<p>At its core, the goal of Sass is to avoid repetitive CSS styles. One efficient Sass practice is the use of variables which allow for a single location, or source of truth, on specific styles or values. These variables are easily reusable across multiple files. The next step to removing repetition in your styles is through the use of functions, mixins, and placeholders. These techniques allow you to use large blocks of code without duplicating it.</p>
 
 <h3>Functions, Mixins, and Placeholders. What is the difference?</h3>
-<p>If you have ever used a backend programming language like php or rails, then you already know the (function) of functions. Basically a function performs an operation and then explicitly returns a value for usage. Mixins are very similar to functions except they do not have to explicitly return a value. They can instead return Sass styles directly to the file. Placeholders are a little more tricky. A placeholder provides a style or group of styles that can be extended (included) into other styles.</p>
+<p>Before we get into the differences lets get into a quick review of what each one is. If you have ever used a backend programming language like php or rails, then you already know the <em>function</em> of functions. If this is a new concept for you, then a function basically performs an operation and then explicitly returns a value for usage. Think of it like the addition button on a calculator. Mixins are very similar to functions except they do not have to explicitly return a value. They can instead return Sass styles directly to the file. Essentially a Mixin can output multiple styles within a selector while a function can only return a single value. Placeholders are a little more tricky. A placeholder provides a style or group of styles that can be extended or <em>included</em> into other styles. Let's take some time and break down each of these further.</p>
 
 <h4>Functions</h4>
-<p>As I mentioned before a function must explicitly return a value. Functions use the keyword <code>@return</code> to define what value is being output. When building a function a good rule to follow is that it should only perform a single operation. An example would be calculating a letter-spacing from a Photoshop design. A function that is specific can be reused more often and across projects. Functions can also optionally take arguments as seen below <code>($value)</code>. These instance variables can then be used within the function. Functions are called just by using the declared function name in this instance <code>letter-spacing(50)</code>.</p>
+<p>As I mentioned before a function must explicitly return a value. Functions use the keyword <code>@return</code> to define what value is being output. When building a function a good rule to follow is that it should only perform a single operation or action. An example would be calculating a letter-spacing, a single CSS value, from a Photoshop design. A function that is specific can be used across more projects. Functions can also optionally take arguments as seen below <code>($value)</code>. These instance variables can then be used within the function. Functions are called just by using the declared function name in this instance <code>letter-spacing(50)</code>.</p>
 {% highlight scss %}
 
 /**
