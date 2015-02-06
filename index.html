@@ -31,14 +31,15 @@ excerpt: A web development blog created by Josh Frankel
             {% if paginator.page == 1 %}
                 <li><span class="active">1</span></li>
             {% else %}
-                <li><a href="{{ site.url }}/">1</a></li>
+                <li><a rel="next" href="{{ site.url }}/">1</a></li>
             {% endif %}
 
+            <!-- Starting on 2 page loop -->
             {% for count in (2..paginator.total_pages) %}
                 {% if count == paginator.page %}
                     <li><span class="active">{{ count }}</span></li>
                 {% else %}
-                    <li><a href="{{ site.url }}/page{{ count }}/index.html">{{ count }}</a></li>
+                    <li><a href="{{ site.url }}/page/{{ count }}/">{{ count }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

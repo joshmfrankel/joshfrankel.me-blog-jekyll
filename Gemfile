@@ -5,5 +5,5 @@ gem 'compass'
 gem 'bootstrap-sass'
 
 group :jekyll_plugins do
-  gem 'jekyll-minify-html'
+  gem 'octopress-minify-html'
 end

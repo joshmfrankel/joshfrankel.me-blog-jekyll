@@ -15,9 +15,12 @@ author:
 # Site Settings
 url: http://joshfrankel.me/blog
 paginate: 6
+paginate_path: "/page/:num/"
 permalink: /:year/:categories/:title
 excerpt_separator: <!--more-->
 
+env: production
+
 # Plugins
 markdown: redcarpet
-pygments: true
+highlighter: pygments
