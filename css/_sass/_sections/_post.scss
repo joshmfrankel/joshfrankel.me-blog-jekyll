@@ -5,18 +5,23 @@
         font-size: 17px;
         font-size: 1.7rem;
         letter-spacing: 0.05rem;
-        line-height: 32px;
+        line-height: 28px;
     }
     .post {
         margin-bottom: 40px;
         img {
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
         a {
             border-bottom: 1px dashed #94ad30;
         }
         nav a {
             border-bottom: none;
+        }
+        .well {
+            a {
+                display: block;
+            }
         }
     }
     .meta {
@@ -26,6 +31,10 @@
 
     #disqus_thread {
         margin: 0 0 60px 0;
+    }
+
+    .image-holder-300 {
+        width: 300px;
     }
 }
 .post-title {

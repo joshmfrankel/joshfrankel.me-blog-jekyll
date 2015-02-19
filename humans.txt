@@ -15,7 +15,7 @@
 
 /* SITE */
 
-    Last update:2014/02/04
+    Last update:2015/02/18
     Language: English
     Doctype: HTML5
     Tools: Jekyll, Bootstrap 3.0, Sass, Photoshop, jQuery, Guard, Compass, Sublime Text 3.0 Beta, Git, Google Analytics

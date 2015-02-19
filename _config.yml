@@ -19,7 +19,11 @@ paginate_path: "/page/:num/"
 permalink: /:year/:categories/:title
 excerpt_separator: <!--more-->
 
-env: production
+# Development setup
+dev:
+    url: http://localhost:4000
+
+env: development
 
 # Plugins
 markdown: redcarpet
