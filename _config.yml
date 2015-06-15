@@ -14,7 +14,7 @@ author:
 
 # Site Settings
 url: http://joshfrankel.me/blog
-imgurl: http://joshfrankel.me/
+imgurl: http://joshfrankel.me
 paginate: 6
 paginate_path: "/page/:num/"
 permalink: /:year/:categories/:title
