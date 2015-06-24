@@ -18,18 +18,20 @@ published: true
 <!--more-->
 <p>Thanks to the awesome work of Bozhidar Batsov and many talented folks, we have an unofficial <a href="https://github.com/bbatsov/ruby-style-guide" target="_blank" rel="nofollow">Ruby</a> and <a href="https://github.com/bbatsov/rails-style-guide" target="_blank" rel="nofollow">Rails</a> coding standards documentation. These are great resources for when you have questions concerning object oriented programming design challenges. Additionally, they also built the super useful <strong>Rubocop</strong> gem for automating style checks.</p>
 
-<p>I suggest that you read through, or at least skim through, some of the suggested standards. These were created by some of the top people in the industry and are really great for becoming a stronger Ruby master. Some of the standards proposed can be directly translated into a Sublime Text configuration file which we will now begin to build.</p>
+<p>I suggest that you read through, or at least skim through, some of the suggested standards. These were created by some of the top people in the industry and are really great for becoming a <strong>Ruby</strong> master. Some of the standards proposed can be directly translated into a Sublime Text configuration file which we will now begin to build.</p>
 
 <h3>"You have the right to remain silent." <small>Multiple Sublime configurations</small></h3>
 <img src="{{ site.url }}/img/2015/robocop-right-to.jpg" alt="Image property of http://www.telegraph.co.uk/" title="Image property of http://www.telegraph.co.uk/" />
 <p><small><em>Image property of http://www.telegraph.co.uk/</em></small></p>
 <p>Since, most developers are more or less polyglot's when it comes to programming languages, separating our different coding standards becomes a must. Fortunately, for us Sublime Text 3 has a nifty feature for creating syntax specific user configuration files.</p>
 <p>Under the preferences menu in the <strong>Settings - More</strong> menu you will see the option for <strong>Syntax Specific</strong> user configuration. By selecting this option Sublime Text will take your currently active file's code syntax and create a config file specific to it (e.g. JSON.sublime-settings). This file will then only be applicable to files that are also using this language syntax.</p>
-<p>Create the ruby specific user configuration by clicking the <strong>Syntax Specific - User</strong> option and then renaming the file to Ruby.sublime-settings. Once created we can now start following the proposed Ruby style guide.</p>
+<p>Create the ruby specific user configuration by clicking the <strong>Syntax Specific - User</strong> option and then renaming the file to <code>Ruby.sublime-settings</code>. Once created we can now start following the proposed Ruby style guide.</p>
 
 <h3>"Serve the public trust, protect the innocent, uphold the law." <small>Ruby Proposed Standards</small></h3>
 <img src="{{ site.url }}/img/2015/robocop-uphold-law.jpg" alt="Image property of http://www.salon.com/" title="Image property of http://www.salon.com/" />
 <p><small><em>Image property of http://www.salon.com/</em></small></p>
+
+<p>This section includes the cherry-picked settings that can be configured in your <code>Ruby.sublime-settings</code> file. These will help bring your coding environment one step closer to being a highly efficient and up to standards workflow.</p>
 
 <h4>"Use UTF-8 as the source file encoding."</h4>
 <p>Using the UTF-8 file encoding is pretty much a standard for most files.</p>
@@ -84,13 +86,32 @@ published: true
 }
 {% endhighlight %}
 
+<h4>Final Ruby.sublime-settings file</h4>
+<p>I've listed the completed <code>Ruby.sublime-settings</code> file for easy copy-pasting. Enjoy.</p>
+{% highlight json %}
+{
+    "default_encoding": "UTF-8",
+    "default_line_ending": "unix",
+    "ensure_newline_at_eof_on_save": true,
+    "rulers":
+    [
+        80
+    ],
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": "true"
+}
+{% endhighlight %}
+<p>The <strong>Ruby</strong> style guide has many more standards and best practices contained within it. Some of which we won't be able to configure via a simple settings file. Good thing we have the awesome gem <strong>Rubocop</strong> to tell us how to fix our code.</p>
+
 <h3>"They'll fix you. They fix everything." <small>Rubocop</small></h3>
 <img src="{{ site.url }}/img/2015/robocop-enters.jpg" alt="Image property of http://geektyrant.com/news/top-10-movie-quotes-from-robocop" />
 <p><small><em>Image property of http://geektyrant.com/news/top-10-movie-quotes-from-robocop</em></small></p>
 
 <p>In addition to the standards documents, the team behind them also created the <strong>Rubocop</strong> gem. <strong>Rubocop</strong> is like the ruby linter on steroids as it churns through your code unapologetically telling you what needs to be fixed according to the unofficial coding standards. Similiar to PHP's PSR-fixer, <strong>Rubocop</strong> can be setup to run in the background or manually at your leisure.</p>
 
-<p>In order to start using <strong>Rubocop</strong> on your projects, first you need to install the gem with <code>gem install rubocop</code>. Once installed, I prefer to use the Sublimelinter-rubocop package to handle running <strong>Rubocop</strong>. As usual install it via Sublime's package manager. Finally, with both the gem and package ready to go add a file called <code>.rubocop.yml</code> in the root directory of your project. It should contain the following code.</p>
+<p>In order to start using <strong>Rubocop</strong> on your projects, first you need to install the gem with <code>gem install rubocop</code>. Once installed, I prefer to use the <code>Sublimelinter-rubocop</code> Sublime package to handle running <strong>Rubocop</strong> in the background. As per usual install it via Sublime's package manager system. Finally, with both the gem and package ready to go, add a file called <code>.rubocop.yml</code> in the root directory of your project. It should contain the following code.</p>
 {% highlight yaml %}
 AllCops:
   RunRailsCops: true
