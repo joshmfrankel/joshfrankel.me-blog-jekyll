@@ -3,3 +3,4 @@ Gemfile.lock
 _temp
 .sass-cache
 .htaccess
+_deploy.yml
