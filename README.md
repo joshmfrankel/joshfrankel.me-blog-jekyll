@@ -1,7 +1,12 @@
-blog.joshfrankel.me
+joshfrankel.me/blog
 ===================
 
-My blog site files for jekyll
-
-Platform: Jekyll
-Plugins: Bootstrap, Modernizr, HTML5 Boilerplate, jQuery, Sass, Compass
+Powered by:  
+* Jekyll
+* Octopress
+* Bootstrap 3.0
+* Modernizr
+* HTML5 Boilerplate
+* jQuery
+* Sass / Compass
+* Rsync
