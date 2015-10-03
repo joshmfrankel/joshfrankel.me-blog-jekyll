@@ -29,3 +29,7 @@ env: development
 # Plugins
 markdown: redcarpet
 highlighter: pygments
+
+# Octopress
+post_ext: html
+titlecase: true
