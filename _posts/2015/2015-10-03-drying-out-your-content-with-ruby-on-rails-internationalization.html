@@ -90,7 +90,7 @@ end
 <p>So what's wrong here?</p>
 <p>There is a lot of duplication in the code. For the purpose of this article just focus on the fact that the line <code>:alert => "Access Denied."</code> appears four times.</p>
 <blockquote><strong>Note: </strong>There are many other optimizations that could be accomplished including moving duplicate logic into a single method.</blockquote>
-<p>Now multiply that across even a small app and you might have something like 20 instances of the exact same text. What happens if the client wants you to change <strong>"Access Denied"</strong> to <strong>"I'm sorry dave, but I'm afraid I can't do that"</strong>. You better be ready to do a project wide find and replace on your code because you are going to need to change it <strong>20 times!</strong>.</p>
+<p>Now multiply that across even a small app and you might have something like 20 instances of the exact same text. What happens if the client wants you to change <strong>"Access Denied"</strong> to <strong>"I'm sorry dave, but I'm afraid I can't do that"</strong>. You better be ready to do a project wide find and replace on your code because you are going to need to change it <strong>20 times!</strong></p>
 <p>However, by using <strong>I18n</strong> we can significantly cut down on our code debt and future proof your application. Now the above code of <code>:alert => "Access Denied"</code> will become <code>:alert => t('user.alert.access_denied')</code>. Here is what the <strong>en.yml</strong> file looks like</p>
 {% highlight yaml %}
 en:

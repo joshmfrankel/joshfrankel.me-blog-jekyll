@@ -8,9 +8,16 @@ header {
             .navbar-brand {
                 height: auto;
             }
+            .navbar-toggle {
+                margin-top:30px;
+                .icon-bar {
+                    background: #6a6a6a;
+                    height: 3px;
+                    width:32px;
+                }
+            }
         }
         .navbar-collapse {
-            display: block;
             float:none;
             max-height: none;
 
@@ -25,5 +32,11 @@ header {
                 }
             }
         }
+    }
+}
+.post {
+    img {
+        height: auto;
+        width:100%;
     }
 }
