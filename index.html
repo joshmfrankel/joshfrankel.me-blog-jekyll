@@ -7,7 +7,7 @@ excerpt: A web development blog created by Josh Frankel
     <div class="jumbotron">
         <div class="container">
             <h1>{{ site.tagline }}</h1>
-            <h6><a href="#">Now With More Rubies!!!</a></h6>
+            <!-- <h6><a href="#">Now With More Rubies!!!</a></h6> -->
         </div>
     </div>
 
@@ -16,7 +16,7 @@ excerpt: A web development blog created by Josh Frankel
         <div class="post-listing">
             {% for post in paginator.posts %}
                 <div class="post-single">
-                    <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+                    <h2><a href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></h2>
                     <div class="meta">
                         <p>
                             <time class="meta-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
