@@ -1,0 +1,90 @@
+Common rails errors and fixes
+
+
+<ul>
+  <li href="#1"><strong>1. </strong>A server is already running. Check pids/server.pid</li>
+  <li href="#2"><strong>2. </strong>bind: Address already in use - bind(2) for 127.0.0.1:3000 (Errno::EADDRINUSE)</li>
+  <li href="#3"><strong>3. </strong>Terminal outputs rails console errors after stopping execution</li>
+  <li href="#4"><strong>4. </strong>NameError at [route] uninitialized constant [class-name]</li>
+  <li href="#5"><strong>5. </strong>MultiJson::ParseError at [route]. Oj::ParseError</li>
+  <li href="#6"><strong>6. </strong>LoadError at [route] Unable to autoload constant [class-name], expected [filepath] to define it.</li>
+  <li href="#7"><strong>7. </strong>PG::ObjectInUse: ERROR:  database "[your-database-name]" is being accessed by other users</li>
+  <li href="#8"><strong>8. </strong>Could not find [gem name] in any of the sources</li>
+</ul>
+
+<h2 id="1">Rails server pid</h2>
+<code>A server is already running. Check /Users/jfrankel/Rails/sourcing/tmp/pids/server.pid.</code>
+Sometimes rails server doesn't unlock its process id. Manually remove it to fix it.
+
+<h2 id="2">Address already in use</h2>
+=> Booting WEBrick
+=> Rails 4.2.4 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2015-10-03 14:00:40] INFO  WEBrick 1.3.1
+[2015-10-03 14:00:40] INFO  ruby 2.2.1 (2015-02-26) [x86_64-darwin14]
+Exiting
+/Users/jfrankel/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/socket.rb:206:in `bind': Address already in use - bind(2) for 127.0.0.1:3000 (Errno::EADDRINUSE)
+
+The port for your local development server is still being used by a ruby process. Assuming you are using the default port of 3000 run the following command to retrieve a list of all processes using the port.
+
+lsof -wni tcp:3000
+
+SHould get something like
+
+COMMAND   PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ruby    41704 jfrankel   12u  IPv6 0xf3fe9a8ff1e035b9      0t0  TCP [::1]:hbci (LISTEN)
+ruby    41704 jfrankel   13u  IPv4 0xf3fe9a8ff6649a29      0t0  TCP 127.0.0.1:hbci (LISTEN)
+
+Next just kill the process based on the pid.
+
+kill -9 41704
+
+<h2 id="3">Rails console gives errors in terminal after closing with Ctrl+c</h2>
+
+Try using exit as it is the preferred method of stopping the session. For now just start a new terminal window.
+
+<h2 id="4">Name Error</h2>
+NameError at /awards/11
+uninitialized constant User::NotificationSetting
+
+These are much more straigh forward than they seem. You have mostly likely misnamed something or a class doesn't exist. Make sure to check if the constant needs to be plural or is misnamed. Check spelling
+
+<h2 id="5">Cookie Error</h2>
+MultiJson::ParseError at /login
+Oj::ParseError
+
+def preferences
+  @_preferences ||= MultiJson.load(cookies["preferences_#{get_preference_group}"] || "{}")
+end
+
+Remove cookies for the website in your browser
+
+<h2 id="6">LoadError expected something to define it</h2>
+LoadError at /awards/11
+Unable to autoload constant AwardSupplierNotificationSettings, expected /Users/jfrankel/Rails/sourcing/app/models/award_supplier_notification_settings.rb to define it
+
+Basically this is similiar to the above NameError. This usually means that a class name is incorrectly typed.
+
+<h2 id="7">PG::ObjectInUse: ERROR:  database "myapp_development" is being accessed by other users</h2>
+Rake db:drop or other databse actions
+PG::ObjectInUse: ERROR:  database "myapp_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+: DROP DATABASE IF EXISTS "myapp_development"
+
+Make sure all connections to the database are closed
+Make sure all pgsql admin connections are closed
+
+<h2 id="8">Could not find [gem name] in any of the sources</h2>
+
+Could not find in sources errors generally deal with the Gemfile, Gemfile.lock, improper bundler usage, or misconfigured installation.
+
+1.Revert to a clean state in your repository
+2.Remove minutest from Gemfile
+3.Run bundle (not update)
+4.Look in your Gemfile.lock and see what is depending upon minitest
+
+Turn off all rails server and guard instances
+rails g rspec:install
+regenerate guard
+remove Gemfile.lock

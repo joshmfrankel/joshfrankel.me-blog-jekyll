@@ -1,8 +1,30 @@
 .jumbotron {
     background-color:#94ad30;
+    position:relative;
 
     h1 {
         color:#fff;
         margin:0;
+    }
+    h6 {
+        text-transform: capitalize;
+        -moz-transform: rotate(-30deg);
+        -webkit-transform: rotate(-30deg);
+        -o-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        transform: rotate(-10deg);
+        width: auto;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 300;
+        background-color: greenyellow;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 10px;
+        color: #333;
+        position: absolute;
+        width: 120px;
+        right: 15%;
+        bottom: -30px;
     }
 }
