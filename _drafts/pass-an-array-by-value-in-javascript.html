@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Pass an Array by Value in JavaScript"
+---
+
+<h3>OOP JavaScript pass array by value</h3>
+<p>When using object-oriented programming with JavaScript, the <code>this</code> keyword refers to the current class or object. Sometimes it is necessary to have a copy of a class property that is passed by value and not be reference so that you do not alter the original property. I found while working with arrays that to get a duplicate array of an existing one that you can utilize the <code>.slice(0)</code> method to accomplish this.</p>
+
+<p>Basically what <code>.slice(0)</code> does is attempt to run the <code>slice</code> method with the argument 0. This essentially tells it to <code>slice</code> the array at index 0 or more simply don't do anything. The side effect of doing this is that <code>slice</code> always returns a new array so now you will have a duplicate array of the original. Quick example below.</p>
+
+{% highlight javascript %}
+var deckCollection = this.deck.collection.slice(0);
+{% endhighlight %}

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "ActiveRecord Find vs Find_by"
+---
+
+<h3>ActiveRecord: find vs find_by</h3>
+<p>When performing ActiveRecord <code>find</code> and <code>find_by</code> there is an important difference that I ran into this month. A simple <code>find</code> will only search for the id from the model and will return an <code>exception</code> if it doesn't exist. While a <code>find_by_[field_name]</code> will search the specified field, but will return <code>nil</code> if it doesn't exist. Helpful to prevent exceptions when you aren't sure if a record exists or not.</p>

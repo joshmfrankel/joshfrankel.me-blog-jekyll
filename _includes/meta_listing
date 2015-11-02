@@ -15,7 +15,7 @@
 
 <span class="meta-tags">
     {% for tag in [include.type].tags %}
-        <a href="{{ site.url }}/tags.html#{{ tag }}">{{ tag }}</a>
+        <a href="{{ site.url }}/tags.html#{{ tag }}">{{ tag | downcase }}</a>
         {% if forloop.index != forloop.length %}
         ,&nbsp;
         {% endif %}

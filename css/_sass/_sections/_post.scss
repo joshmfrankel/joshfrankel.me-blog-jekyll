@@ -24,6 +24,21 @@
                 display: block;
             }
         }
+        .panel {
+            margin:25px 0;
+            .panel-heading {
+                h4 {
+                    display: inline-block;
+                }
+                a {
+                    float:right;
+                    position: relative;
+                    margin-top:10px;
+                    margin-right: 5px;
+                    border:none;
+                }
+            }
+        }
     }
     .meta {
         font-size: 16px;
