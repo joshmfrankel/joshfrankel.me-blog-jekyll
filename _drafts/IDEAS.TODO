@@ -1,0 +1,19 @@
+Post Ideas:
+
+--- ✄ -----------------------
+
+You can interact with Guard and enter commands when Guard has nothing to do. Guard understands the following commands:
+
+↩: Run all Guards.
+h, help: Show a help of the available interactor commands.
+r, reload: Reload all Guards.
+n, notification: Toggle system notifications on and off.
+p, pause: Toggles the file modification listener. The prompt will change to p> when paused. This is useful when switching Git branches, rebase Git or change whitespace.
+e, exit: Stop all Guards and quit Guard.
+
+
+travis Ci:
+
+node, socket.io and express:
+
+http://devblog.avdi.org/2015/05/08/a-personal-programming-language-roadmap/

@@ -18,32 +18,34 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:300,700,900,300italic,700italic' rel='stylesheet' type='text/css'>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-        <!-- Build link id for SEO pagination -->
-        {% if paginator.page == 1 %}
-            {% assign nextURL = 2 %}
-        {% elsif paginator.page == paginator.total_pages %}
-            {% assign prevURL = paginator.total_pages | minus:1 %}
-        {% else %}
-            {% if paginator.page == 2 %}
-                {% assign prevURL = '' %}
+        {% unless page.id %}
+            <!-- Build link id for SEO pagination -->
+            {% if paginator.page == 1 %}
+                {% assign nextURL = 2 %}
+            {% elsif paginator.page == paginator.total_pages %}
+                {% assign prevURL = paginator.total_pages | minus:1 %}
             {% else %}
-                {% assign prevURL = paginator.page | minus:1 %}
+                {% if paginator.page == 2 %}
+                    {% assign prevURL = '' %}
+                {% else %}
+                    {% assign prevURL = paginator.page | minus:1 %}
+                {% endif %}
+                {% assign nextURL = paginator.page | plus:1 %}
             {% endif %}
-            {% assign nextURL = paginator.page | plus:1 %}
-        {% endif %}
 
-        <!-- Output links -->
-        {% if prevURL %}
-            {% if paginator.page == 2 %}
-                <link rel="prev" href="{{ site.url }}" />
-            {% else %}
-                <link rel="prev" href="{{ site.url }}/page/{{ prevURL }}/" />
+            <!-- Output links -->
+            {% if prevURL %}
+                {% if paginator.page == 2 %}
+                    <link rel="prev" href="{{ site.url }}" />
+                {% else %}
+                    <link rel="prev" href="{{ site.url }}/page/{{ prevURL }}/" />
+                {% endif %}
             {% endif %}
-        {% endif %}
 
-        {% if nextURL %}
-            <link rel="next" href="{{ site.url }}/page/{{ nextURL }}/" />
-        {% endif %}
+            {% if nextURL %}
+                <link rel="next" href="{{ site.url }}/page/{{ nextURL }}/" />
+            {% endif %}
+        {% endunless %}
 
     </head>
     <body>

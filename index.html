@@ -20,6 +20,7 @@ excerpt: A web development blog created by Josh Frankel
                     <div class="meta">
                         <p>
                             <time class="meta-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+                            <!-- <a href="{{ site.url }}{{ post.url }}#disqus_thread"><span class="meta-comments disqus-comment-count" data-disqus-url="{{ site.url }}{{ post.url }}/"></span>&nbsp;<i class="fa fa-comments"></i>&nbsp;</a> -->
                             {% include meta_listing type="post" %}
                         </p>
                     </div>
@@ -46,3 +47,16 @@ excerpt: A web development blog created by Josh Frankel
         </ul>
 
     </div> <!-- End container -->
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'joshmfrankel'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
