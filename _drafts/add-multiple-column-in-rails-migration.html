@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Add Multiple Column in Rails Migration"
+---
+
+rails g migration add_public_and_private_to_document public:string private:string
+If you use the add_[column_names]_to_[model] naming convention, rails will work out the appropriate table and create the migration you want.
+
+Have a read here for more info: http://guides.rubyonrails.org/migrations.html

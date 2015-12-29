@@ -11,6 +11,8 @@ rake log:clear
 
 # Pretty print console variable
 puts User.all.to_yaml
+puts User.all.inspect
+debug User.all
 
 # Reset the database
 rake db:drop - Drop the current database (environment default: development)
@@ -37,3 +39,4 @@ password and password_confirmation
 travis ci
 services:
   - elastic search
+

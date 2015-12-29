@@ -1,0 +1,61 @@
+---
+layout: post
+title: "Recovering From Common Ruby on Rails Errors Part 2"
+categories:
+- fix
+tags:
+- ruby
+- ruby on rails
+- errors
+---
+
+<ul>
+  <li><a href="#6"><strong>6. </strong>LoadError at [route] Unable to autoload constant [class-name], expected [filepath] </to define it.</a>
+  <li><a href="#7"><strong>7. </strong>PG::ObjectInUse: ERROR:  database "[your-database-name]" is being accessed by </other users</a>
+  <li><a href="#8"><strong>8. </strong>Could not find [gem name] in any of the sources</a></li>
+  <li><a href="#9"><strong>9. </strong>Databse keeps truncating after running guard-rspec</a></li>
+  <li><a href="#10"><strong>10. </strong>Stack level too deep</a></li>
+</ul>
+
+<h2 id="6">LoadError expected something to define it</h2>
+{% highlight bash %}
+LoadError at /awards/11
+Unable to autoload constant AwardSupplierNotificationSettings, expected /Users/jfrankel/Rails/sourcing/app/models/award_supplier_notification_settings.rb to define it
+{% endhighlight %}
+
+Basically this is similiar to the above NameError. This usually means that a class name is incorrectly typed.
+
+<h2 id="7">PG::ObjectInUse: ERROR:  database "myapp_development" is being accessed by other users</h2>
+Rake db:drop or other databse actions
+{% highlight bash %}
+PG::ObjectInUse: ERROR:  database "myapp_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+: DROP DATABASE IF EXISTS "myapp_development"
+{% endhighlight %}
+
+Make sure all connections to the database are closed
+Make sure all pgsql admin connections are closed
+
+<h2 id="8">Could not find [gem name] in any of the sources</h2>
+
+Could not find in sources errors generally deal with the Gemfile, Gemfile.lock, improper bundler usage, or misconfigured installation.
+
+1. Revert to a clean state in your repository
+2. Remove [gem name] from Gemfile
+3. Run bundle (not update)
+4. Look in your Gemfile.lock and see what is depending upon [gem name]
+
+Turn off all rails server and guard instances
+rails g rspec:install
+regenerate guard
+remove Gemfile.lock
+
+<h2 id="9">Databse keeps truncating after running guard-rspec</h2>
+You most likely
+
+
+<h2 id="10">Stack Level Too Deep</h2>
+<p>One of your methods is performing an infinite recursive call which is timing out the application's execution. Make sure if you are doing recursion that there is a stopping condition. Otherwise you have a method potentially calling itself incorrectly.</p>
+
+<h2 id="11">DoubleRenderError</h2>
+<p>Redirect or render twice in single controller action</p>
