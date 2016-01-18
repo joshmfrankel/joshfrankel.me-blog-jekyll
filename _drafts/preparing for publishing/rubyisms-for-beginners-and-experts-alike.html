@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Rubyisms for Beginners and Experts Alike"
+---
+
+
+<h3>1. Default variable value</h3>
+my_age ||= 'default'
+
+<h3>2. Post conditionals</h3>
+my_age = 23 if status == 200
+
+<h3>3. Guard clauses</h3>
+def search
+  return unless results.present?
+  results.status = :success
+end
+
+<h3>4. Array Push</h3>
+age_list = [23, 40, 28, 27, 32]
+age_list << 54
+puts age_list
+
+<h3>5. Percent Strings</h3>
+%w[Gandalf Middle-earth The\ Necromancer]
+#=> ["Gandalf", "Middle-earth", "The Necromancer"]
+
+<h3>6. Splat arguments</h3>
+def serious_method(first_param, *extra_args)
+
+<h3>7. String Interpolation</h3>
+my_name = 'Frodo Baggins'
+puts "Welcome to Rivendell, #{my_name}"
+
+<h3>8. Blocks</h3>
+variable.each do |x|
+  puts x
+end
+VS.
+variable.each { |x| puts x }

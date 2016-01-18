@@ -1,0 +1,11 @@
+---
+layout: post
+title: "How to Backup a Rails Database"
+---
+
+This example will backup erp database that belongs to user geekstuff, to the file mydb.sql
+
+$ pg_dump -U geekstuff erp -f mydb.sql
+Backup:  $ pg_dump -U {user-name} {source_db} -f {dumpfilename.sql}
+
+Restore: $ psql -U {user-name} -d {desintation_db}-f {dumpfilename.sql}
