@@ -28,6 +28,7 @@ h3 {
 }
 h4 {
     font-weight: 700;
+    margin-top:19px;
 }
 p {
     letter-spacing: 0.01em;
@@ -60,8 +61,8 @@ blockquote {
     nav {
         margin-top:10px;
         a {
-            font-size: 17px;
-            font-size: 1.7rem;
+            font-size: $font-size-regular-px;
+            font-size: $font-size-regular-rem;
             display: block;
             margin-bottom: 5px;
         }
@@ -90,7 +91,7 @@ code {
 }
 .highlight {
     @include border-radius(2px);
-    margin: 30px 0;
+    margin: 19px 0;
     pre {
         border: none;
         code {

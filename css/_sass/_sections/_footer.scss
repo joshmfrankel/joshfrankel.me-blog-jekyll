@@ -9,19 +9,37 @@ footer {
             margin-top:7px;
         }
     }
+    .about-me {
+        img {
+            margin-left:-16px;
+        }
+    }
     .social-icons-container {
+        margin-top:46px;
         h4 {
             margin-top:7px;
+            margin-bottom: 20px;
+            color: #a6a6a6;
+            font-weight: 300;
+            span {
+                color: #6a6a6a;
+                font-weight: 400;
+            }
         }
         .social-icons {
             list-style: none;
             padding-left:0;
 
             li {
-                font-size: 30px;
-                font-size: 3.0rem;
                 display: inline-block;
-                margin: 0 10px;
+                margin: 0 5px;
+
+                a {
+                    i {
+                        font-size: 30px;
+                        font-size: 3rem;
+                    }
+                }
             }
         }
     }

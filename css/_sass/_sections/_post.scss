@@ -2,10 +2,10 @@
 
     p,
     .post {
-        font-size: 17px;
-        font-size: 1.7rem;
-        letter-spacing: 0.05rem;
-        line-height: 28px;
+        font-size: $font-size-regular-px;
+        font-size: $font-size-regular-rem;
+        letter-spacing: 0.025rem;
+        line-height: $line-height-regular;
     }
     .post {
         margin-bottom: 40px;
@@ -19,9 +19,37 @@
         nav a {
             border-bottom: none;
         }
+        h4 {
+            display: inline-block;
+        }
         .well {
+            h4 {
+
+            }
             a {
                 display: block;
+            }
+            &.floated {
+                float:right;
+                width:40%;
+                margin: 5px 0 20px 35px;
+                font-size: 16px;
+                line-height: 23px;
+            }
+        }
+        blockquote {
+            &.floating-quote {
+                font-size: 16px;
+                font-size: 1.6rem;
+                width: 40%;
+            }
+            &.floating-quote-right {
+                float:right;
+                margin: 15px 0 15px 35px;
+            }
+            .page-header {
+                margin-top:0;
+                font-weight: 700;
             }
         }
         .panel-link {

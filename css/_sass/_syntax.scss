@@ -1,4 +1,7 @@
 /* monokai syntax highlighting */
+.highlight code span {
+  font: 400 15px monospace;
+}
 .highlight,.highlight pre,.highlight table { background:#272822 ;color:#f8f8f2 !important;}
 .highlight .hll { background-color:#49483e !important; }
 .highlight .err { color:#960050 !important;background-color:#f8f8f2 !important; }

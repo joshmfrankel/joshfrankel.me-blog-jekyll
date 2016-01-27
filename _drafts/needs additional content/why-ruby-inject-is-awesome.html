@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "Injecting awesome into your code with the Ruby inject method"
+title: "Injecting awesome into your code with the Ruby inject method - Enumerables 1"
 ---
 
 
+<div class="well">
 
+</div>
 [self.survey_section_questions, self.profile_section_questions, self.workflow_form_section_questions].inject(0) do |sum, n|
       break sum if sum > 1
       sum + n.size

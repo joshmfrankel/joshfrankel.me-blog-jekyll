@@ -2,20 +2,26 @@
             <hr />
             <footer class="container">
                 <div class="row">
-                    <div class="about-me col-md-8">
-                        <h3>About the Author</h3>
+                    <div class="about-me col-md-8" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                            <img src="{{ site.url }}/img/design/josh-frankel-publisher-logo.png" alt="Josh Frankel Publisher image" />
+                            <meta itemprop="url" content="{{ site.url }}/img/design/josh-frankel-publisher-logo.png">
+                            <meta itemprop="width" content="142">
+                            <meta itemprop="height" content="90">
+                        </div>
+                        <meta itemprop="name" content="Josh Frankel">
                         <p>I am obsessed with mastering the newest programming techniques and skills. You can find me constantly pouring over the latest articles and tutorials. When I'm not reading up on web development, I usually am writing about it here, on my blog.</p>
                         <p>I love answering questions and explaining programming concepts, so feel free to leave a comment or contact me via social media.</p>
                     </div>
-                    <div class="social-icons-container col-md-4" itemscope itemtype="http://schema.org/Person">
+                    <div class="social-icons-container col-md-4" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <h4>Follow <span itemprop="name">Josh Frankel</span></h4>
                         <link itemprop="url" href="http://www.joshfrankel.me">
                         <ul class="social-icons">
-                            <li><a itemprop="sameAs" href="{{ site.author.github }}"><i class="fa fa-github"></i></a></li>
-                            <li><a itemprop="sameAs" href="{{ site.author.stackoverflow }}"><i class="fa fa-stack-overflow"></i></a></li>
-                            <li><a itemprop="sameAs" href="{{ site.author.twitter }}"><i class="fa fa-twitter"></i></a></li>
-                            <li><a itemprop="sameAs" href="{{ site.author.linkedin }}"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a itemprop="sameAs" href="{{ site.author.google }}?rel=author"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a itemprop="sameAs" href="{{ site.author.github }}" class="btn btn-primary"><i class="fa fa-github"></i></a></li>
+                            <li><a itemprop="sameAs" href="{{ site.author.stackoverflow }}" class="btn btn-primary"><i class="fa fa-stack-overflow"></i></a></li>
+                            <li><a itemprop="sameAs" href="{{ site.author.twitter }}" class="btn btn-primary"><i class="fa fa-twitter"></i></a></li>
+                            <li><a itemprop="sameAs" href="{{ site.author.linkedin }}" class="btn btn-primary"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a itemprop="sameAs" href="{{ site.author.google }}?rel=author" class="btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
