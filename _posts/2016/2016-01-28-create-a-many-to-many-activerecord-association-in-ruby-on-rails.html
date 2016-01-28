@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Create a many-to-many ActiveRecord association in Ruby on Rails with has_many :through and has_and_belongs_to_many"
-date: 2016-01-25T12:51:26-05:00
+date: 2016-01-28T08:51:26-05:00
 categories:
 - how-to
 tags:
@@ -222,12 +222,15 @@ programmer.projects.create(client: Client.create(name: 'Keanu Reeves'))
 programmer.clients.create(name: 'Mr. Nic Cage')
 {% endhighlight %}
 <p>Notice how for HABTM, we use <code>programmer.clients.create(client_attribute: value)</code> to build the collection, unlike a <code>has_many :through</code> where we can use the join table model like so: <code>programmer.projects.create(client: client_object)</code>. Just another difference between the two association methods.</p>
+<h4>Existing database schemas</h4>
+<p>The best use case for a HABTM association is when you are working with an already built database. For some reason maybe the <code>has_many :through</code> association just isn't going to work with the existing structure. Or maybe the system is already utilizing a custom HABTM association and removing it could irrevocably break parts of the system.</p>
+<p>A little dramatic I know.</p>
+<p>These sort of cases typically happen with legacy applications as HATBM is an older feature of Rails. With some good refactoring they could be removed from the system, given there is a good suite of tests configured.</p>
 <h4>Recommended usage</h4>
 <blockquote class="floating-quote floating-quote-right"><div class="page-header">RailsGuides</div> "The simplest rule of thumb is that you should set up a has_many :through relationship if you need to work with the relationship model as an independent entity. If you don't need to do anything with the relationship model, it may be simpler to set up a has_and_belongs_to_many relationship (though you'll need to remember to create the joining table in the database).<br /><br />
 You should use has_many :through if you need validations, callbacks, or extra attributes on the join model."</blockquote>
-<p>I would recommend that 90% of the time that you stick to creating <code>has_many :through</code> many-to-many associations. They end up being much cleaner as well as saving you time down the road by giving you a model that is tied
-to a database join table.</p>
-<p>Then other 10% of the time, <code>has_and_belongs_to_many:</code> is very useful for legacy relational database schemas as well as older systems. Sometimes HABTM makes a lot of sense for these situations.</p>
+<p>I would recommend that 99% of the time that you stick to creating <code>has_many :through</code> associations. They end up being much cleaner as well as saving you time down the road by giving you a model that is tied to your database's join table.</p>
+<p>The other 1% of the time, <code>has_and_belongs_to_many:</code> is very useful for legacy relational database schemas as well as older systems. Sometimes HABTM makes a lot of sense for these situations.</p>
 <h3>Conclusion</h3>
 <p>While <code>has_and_belongs_to_many:</code> associations are quicker to setup they tend not to scale well as your applications requires more functionality. <code>has_many :through</code> on the other hand are very versatile and give the added benefit of having a model directly mapped to your join table.</p>
 <p>Both types of many-to-many associations require the creation of a migration for a join table, a table that sits between two other tables and helps to association them to each other. This table is directly mapped to a model when using a <code>has_many :through</code> association but not a HABTM.</p>
@@ -250,4 +253,5 @@ to a database join table.</p>
   <li>Best for legacy architecture</li>
 </ul>
 
-<p>There you have it both methods of creating many-to-many associations in Rails outlined and explained. Was there something you would like added to this article? Like one association type better than the other? Weigh in on it in the comments below.</p>
+<p>So we've gone through the basics of designing a good many-to-many database structure, the console commands needed to create proper migrations, and the different setups of Rail's two many-to-many association methods.</p>
+<p>Was there something you would like added to this article? Got a better use case for the <code>has_and_belongs_to_many:</code> association? How about a favorite association? Weigh in on it in the comments below.</p>
