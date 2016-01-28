@@ -8,8 +8,9 @@ tags:
 - ruby on rails
 - ActiveRecord
 ---
-<p itemprop="description">A common obstacle while building web applications are relational database associations. Without these it would be difficult to decrease the amount of duplicate data as well as increasing the overall database efficiency. The most common relationships are the: one-to-one, one-to-many, and many-to-many. In this article I'll go through the creation of a many-to-many relationship with the built-in <code>Ruby on Rails ActiveRecord</code> associations, <code>has_many :through</code> and <code>has_and_belongs_to_many:</code>. Additionally, the specific differences between the two will be examined, but before all that let's first get some background on what is a many-to-many relationship.</p>
+<p itemprop="description">A common obstacle when building web applications are relational database associations. Without these it would be difficult to decrease the amount of duplicate data as well as increasing the overall database efficiency. The most common relationships are the: one-to-one, one-to-many, and many-to-many.</p>
 <!--more-->
+<p>In this article I'll go through the creation of a many-to-many relationship with the built-in <code>Ruby on Rails ActiveRecord</code> associations, <code>has_many :through</code> and <code>has_and_belongs_to_many:</code>. Additionally, the specific differences between the two will be examined, but before all that let's first get some background on what is a many-to-many relationship.</p>
 
 <h3>The Many-to-Many Relationship</h3>
 <p>In relational database schemas, a <code>many-to-many</code> association is when a database table is built in a way that relates it to another table through a joining table. There needs to be at least three table to accomplish this. This allows the developer to query the relationship between the two tables gather their respective collections.</p>

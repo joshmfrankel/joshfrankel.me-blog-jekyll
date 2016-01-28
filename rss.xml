@@ -4,14 +4,24 @@ title : RSS Feed
 ---
 
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-    <title>{{ site.name }}</title>
-    <description>{{ site.name }} - {{ site.author.name }}</description>
-    <link>{{ site.url }}/rss.xml</link>
+    <title>{{ site.author.name }}</title>
     <link>{{ site.url }}</link>
-    <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
-    <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+    <description>{{ site.tagline }} - a blog by {{ site.author.name }}</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <copyright>(c) 2011-{{ site.time | date: '%Y' }}</copyright>
+    <atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+       <title>{{ site.author.name }}</title>
+       <url>{{ site.url }}/img/design/josh-frankel-publisher-logo.png</url>
+       <link>{{ site.url }}</link>
+       <description>{{ site.author.name }}</description>
+       <width>142</width>
+       <height>90</height>
+    </image>
     <ttl>1800</ttl>
 
     {% for post in site.posts %}
@@ -20,7 +30,7 @@ title : RSS Feed
             <description>{{ post.content | xml_escape }}</description>
             <link>{{ site.url }}{{ post.url }}</link>
             <guid>{{ site.url }}{{ post.id }}</guid>
-            <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         </item>
     {% endfor %}
 
