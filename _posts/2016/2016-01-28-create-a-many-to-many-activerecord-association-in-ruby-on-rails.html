@@ -19,7 +19,7 @@ tags:
   <div class="caption">An ERD example of what not to do</div>
 </div>
 <p>Unfortunately, you now have set yourself up for a headache later on. To use this database you'll have to contend with having to create a <code>project_id</code> foreign key in each subsequent table that needs an association with the <code>Project</code> table. This can get hairy pretty quick.</p>
-<p class="well floated"><strong>Referential Integrity</strong><br />A standard of databases that states data must remain consistent and valid when dealing with a relationship between two tables.</p><span class="clearfix"></span>
+<p class="well floated"><strong>Referential Integrity</strong><br />A standard of databases that states data must remain consistent and valid when dealing with a relationship between two tables.</p>
 <p>As an example, you could delete say a <code>Project</code> record that is related to a <code>Programmer</code> and <code>Client</code>. Well now both the <code>Programmer</code> and <code>Client</code> records contain a <code>project_id</code> key that refers to a deleted record. Which would be a violation of basic referential integrity.</p>
 
 <p>So, that didn't work out very well. Let's take another stab at it from the opposite direction.</p>
@@ -43,7 +43,7 @@ tags:
 <p>These are some of the basic fundamentals of ActiveRecord Assocations, at least from a theorhetical standpoint. However, for the purposes of this article we will focus on many-to-many associations which are accomplished with two of the more challenging associations that can be implemented. The <code>has_many :through</code> and the <code>has_and_belongs_to_many:</code>.</p>
 
 <h3>has_many :through</h3>
-<p class="well floated"><strong>Rails Tip</strong><br /> I am using the shortened version of the <code>rails generate</code> command which is simply <code>rails g</code>. Nifty!</p><span class="clearfix"></span>
+<p class="well floated"><strong>Rails Tip</strong><br /> I am using the shortened version of the <code>rails generate</code> command which is simply <code>rails g</code>. Nifty!</p>
 <p>The first step to implementing a <code>has_many :through</code> association is to run the rails
 generator to create the model and the migration files. We will use the entity relationship diagram (pictured above) to
 create our application. I've listed the appropriate migrations below. I recommend using the <code>rails generate model</code> syntax, as it not only gives you a model but the matching migration file as well.</p>
