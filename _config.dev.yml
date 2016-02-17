@@ -1,0 +1,31 @@
+# Basic Config
+name: Josh Frankel
+tagline: Web Development Simplified
+
+# Author
+author:
+    name: Josh Frankel
+    github: https://github.com/joshmfrankel
+    stackoverflow: http://stackoverflow.com/users/906974/josh-frankel
+    twitter: https://twitter.com/Joshmfrankel
+    linkedin: http://www.linkedin.com/in/joshmfrankel
+    google: https://plus.google.com/+JoshFrankelWebDeveloper
+    feedburner: "http://feedburner.google.com/fb/a/mailverify?uri=blogjoshmfrankel&amp;loc=en_US"
+
+# Site Settings
+url: http://localhost:4000
+imgurl: http://localhost:4000/img
+paginate: 10
+paginate_path: "/page/:num/"
+permalink: /:year/:categories/:title
+excerpt_separator: <!--more-->
+
+env: development
+
+# Plugins
+markdown: redcarpet
+highlighter: pygments
+
+# Octopress
+post_ext: html
+titlecase: true

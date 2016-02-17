@@ -1,0 +1,52 @@
+---
+layout: post
+title: "What I Learned in Elixir This Week #1"
+---
+
+<h3>Hex</h3>
+https://hex.pm/
+Hex is Elixir's package manager.
+Install it via mix
+{% highlight elixir %}
+local.hex
+{% endhighlight %}
+
+<h3>Elixir requires Erlang</h3>
+Elixir requires erlang installed as elixir gets compiled down to Erlang byte code to run on the Erlang virtual machine
+
+<h3>Phoenix uses brunch.io</h3>
+To compile assets (js, css, etc)
+
+<h3>Phoenix uses PostGreSQL out of the box</h3>
+
+<h3>You can run the application in an interactive shell</h3>
+iex -S mix phoenix.server
+
+<h3>Phoenix Assets</h3>
+Static assets => priv/static
+
+compiled assets => web/static
+These get built and passed to priv/static
+
+<h3>Start and End point</h3>
+lib/[app-name].ex
+lib/[app-name]/endpoint.ex
+
+<h3>Lib vs Web</h3>
+lib - isn't recompiled per request (manage state outside web request)
+web - compiled per request
+
+<h3>Routers</h3>
+web/router.ex
+
+<h3>Render</h3>
+render conn, "index.html"
+
+<h3>Phoenix uses eex</h3>
+EEX is embedded elixir similiar to erb
+
+<h3>Phoenix has application wide templates</h3>
+web/templates/layout/app.html.eex
+Just like rails
+
+http://www.phoenixframework.org/docs/adding-pages#section-another-new-page

@@ -6,12 +6,13 @@
         font-size: $font-size-regular-rem;
         letter-spacing: 0.025rem;
         line-height: $line-height-regular;
+        margin: 24px 0;
     }
     .post {
         margin-bottom: 40px;
         img {
             display: block;
-            margin: 0 auto 18px;
+            margin: 18px auto;
         }
         a {
             border-bottom: 1px dashed #94ad30;
@@ -33,8 +34,23 @@
                 float:right;
                 width:40%;
                 margin: 5px 0 20px 35px;
-                font-size: 16px;
+                font-size: 17px;
+                font-size: 1.7rem;
                 line-height: 23px;
+                padding: 22px;
+
+                p {
+                    font-size: 16px;
+                    font-size: 1.6rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    &:first-of-type {
+                        margin-top:0;
+                    }
+                }
             }
         }
         blockquote {

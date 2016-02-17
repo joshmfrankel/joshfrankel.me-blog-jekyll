@@ -21,7 +21,7 @@ age_list = [23, 40, 28, 27, 32]
 age_list << 54
 puts age_list
 
-<h3>5. Percent Strings</h3>
+<h3>5. Percent String Arrays</h3>
 %w[Gandalf Middle-earth The\ Necromancer]
 #=> ["Gandalf", "Middle-earth", "The Necromancer"]
 
@@ -38,3 +38,6 @@ variable.each do |x|
 end
 VS.
 variable.each { |x| puts x }
+
+<h3>9. Multiple statements on single line</h3>
+(0..5).inject { |sum, n| break sum if sum > n; sum + n }

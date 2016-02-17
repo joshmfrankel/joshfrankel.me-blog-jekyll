@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Using the Ruby Inject Method"
+categories:
+- enumerables
+tags:
+- ruby
+---
+
+
+Write a function that sorts the keys in a hash by the length of the key as a string. For instance, the hash:
+
+hash = { abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+hash.keys.map(&:to_s).sort_by(&:length)
+hash.keys.collect(&:to_s).sort_by { |k| k.length }
+
+
+VAL = 'Global'
+
+module Foo
+  VAL = 'Foo Local'
+
+  class Bar
+    def value1
+      VAL
+    end
+
+    def value2
+      VAL
+    end
+  end
+end
+
+class Foo::Bar
+  def value2
+    VAL
+  end
+end

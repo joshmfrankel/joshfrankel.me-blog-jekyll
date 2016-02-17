@@ -8,7 +8,7 @@ excerpt: All the currently active tags for posts
 
 <div class="container">
 {% for tag in site.tags %}
-  <h2 id="{{ tag[0] }}">{{ tag[0] | join: "/" }}</h2>
+  <h2 id="{{ tag[0] }}">{{ tag[0] | join: "/" | downcase }}</h2>
   <ul>
     {% assign pages_list = tag[1] %}
     {% include page_listing %}
