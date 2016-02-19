@@ -7,8 +7,10 @@ title: Your New Jekyll Site
 {% for post in site.posts limit: 3 %}
 
 <article class="col-md-4">
-    <p><span class="glyphicon glyphicon-time"></span></p>
-    <p><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time></p>
+    <p>
+      <span class="glyphicon glyphicon-time"></span>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </p>
     <h1><a href="{{ site.url }}{{ post.url }}" target="_blank">{{ post.title }}</a></h1>
     <p>{{ post.excerpt | strip_html | truncatewords: 50 }}&nbsp;<a href="{{ site.url }}{{ post.url }}" target="_blank">read more &rsaquo;</a></p>
 </article>
