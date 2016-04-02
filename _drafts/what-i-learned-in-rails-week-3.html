@@ -1,0 +1,50 @@
+---
+layout: post
+title: "What I Learned in Rails Week 2"
+---
+
+collection.pluck(:id, :type)
+#=> [[1, "Admin"], [2, "User"]]
+
+&:itself
+Yes! The method Kernel#itself was added in Ruby 2.2.0. This method simply returns the object it was called on, so you can write:
+some_array.group_by(&:itself)
+http://stackoverflow.com/a/25879181/906974
+
+Map, Select, and Reject
+http://stackoverflow.com/a/13485482/906974
+
+http://stackoverflow.com/questions/26617201/grouping-an-array-on-the-basis-of-its-first-element-without-duplication-in-ruby
+.group_by(&:first)
+
+Double splat ** means hash
+def foo(a, *b, **c)
+  [a, b, c]
+end
+Here's a demo:
+
+> foo 10
+=> [10, [], {}]
+> foo 10, 20, 30
+=> [10, [20, 30], {}]
+> foo 10, 20, 30, d: 40, e: 50
+=> [10, [20, 30], {:d=>40, :e=>50}]
+> foo 10, d: 40, e: 50
+=> [10, [], {:d=>40, :e=>50}]
+http://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do
+
+yield is awesome
+def each_lesson_with_position_and_average_score
+  lessons.each.with_index(1) do |lesson, position|
+    yield lesson, position, average_score_for_lesson(lesson)
+  end
+end
+
+Polymorphic associations
+id
+type
+
+Hash data in FactoryGirl
+metadata { { course: "#{Faker::Name.name}" } }
+
+Joining on polymorphic associations

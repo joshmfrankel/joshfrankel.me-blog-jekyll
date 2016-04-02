@@ -1,0 +1,91 @@
+---
+layout: post
+title: "What I Learned in Rails Week 2"
+---
+
+Inflector
+camelize
+http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-camelize
+'active_model'.camelize                # => "ActiveModel"
+
+Ubuntu Linux Sort by
+ls -la | sort -nk5
+
+Linux show users
+compgen -u
+
+Linux show groups
+compgen -g
+
+Linux Check groups
+groups <username>
+
+Reload Groups
+http://superuser.com/questions/272061/reload-a-linux-users-group-assignments-without-logging-out
+exec su -l $USER
+
+Docker
+docker run image/image # Downloads the image locally and runs it
+docker images # List local images
+docker rmi -f [image-name] # Delete a local image
+
+FactoryGirl Common Traits
+specs/factories/traits/<trait-name>.rb
+FactoryGirl.define do
+  trait :archived do
+    archived_at DateTime.now
+    archive_number Faker::Number.hexadecimal(32)
+  end
+end
+
+Ruby Pluck
+http://stackoverflow.com/questions/21901142/how-to-pluck-email-from-array-of-users
+
+Intersection
+http://stackoverflow.com/questions/10230227/find-values-in-common-between-two-arrays
+user_ids.delete_if { |id| User.find(id).archived? }
+users.map(&:id) & user_ids
+
+A neat trick for filtering out records you don't want is to take advantage of the fact that ActiveRecord ignores ids for non-matching records:
+
+User.unarchived.where(id: [unarchived_user.id, archived_user.id])
+#=> *only* unarchived_user!
+
+Rename a git branch
+git branch -m <oldname> <newname>
+
+Codeclimate on Linux
+
+
+Rspec Doubles
+it "returns false for archived user with remember token" do
+  valid_current_company
+
+  controller_current_user.current_company.users << archived_user
+
+  user_id = { user_id: archived_user.id }
+  signed  = double(signed: { remember_token: archived_user.remember_token })
+
+  allow(controller_current_user).to receive(:session) { user_id }
+  allow(controller_current_user).to receive(:cookies) { signed }
+  expect(controller_current_user.current_user).to be false
+end
+
+def user_from_session
+  return false unless current_company
+  current_company.users.unarchived.find(session[:user_id])
+rescue ActiveRecord::RecordNotFound
+  false
+end
+
+def user_from_remember_me
+  return false unless current_company
+  user = cookies.signed[:remember_token] && current_company.users.unarchived.find_by_remember_token(cookies.signed[:remember_token])
+  if user && user.remember_token?
+    remember_user!(user)
+    session[:user_id] = user.id
+    user
+  else
+    false
+  end
+end

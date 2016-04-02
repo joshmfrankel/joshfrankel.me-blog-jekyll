@@ -23,6 +23,22 @@
         h4 {
             display: inline-block;
         }
+        .card-container {
+            .card-drawn {
+                float:left;
+                margin-right: 50px;
+            }
+            .card-collection-in-hand {
+                width:100%;
+                img {
+                    display: inline-block;
+
+                    &:not(:first-child) {
+                        margin-left: -230px;
+                    }
+                }
+            }
+        }
         .well {
             h4 {
 
