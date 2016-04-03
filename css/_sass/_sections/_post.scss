@@ -38,6 +38,28 @@
                     }
                 }
             }
+            @media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+                .fix-md {
+                    float:none;
+
+                    img {
+                        margin: 0;
+                    }
+                }
+            }
+            @media only screen and (max-width: $screen-sm) {
+                .card-drawn,
+                .card-collection {
+                    text-align: center;
+                }
+                .card-drawn {
+                    float:none;
+                    margin: 0;
+                }
+                img {
+                    width: initial;
+                }
+            }
         }
         .well {
             h4 {

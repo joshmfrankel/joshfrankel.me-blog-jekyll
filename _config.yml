@@ -20,7 +20,7 @@ url: http://joshfrankel.me/blog
 imgurl: http://joshfrankel.me
 paginate: 10
 paginate_path: "/page/:num/"
-permalink: /:year/:categories/:title
+permalink: /:year/:categories/:title/
 excerpt_separator: <!--more-->
 
 env: production
