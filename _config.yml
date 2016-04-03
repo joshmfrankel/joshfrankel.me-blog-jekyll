@@ -12,6 +12,9 @@ author:
     google: https://plus.google.com/+JoshFrankelWebDeveloper
     feedburner: "http://feedburner.google.com/fb/a/mailverify?uri=blogjoshmfrankel&amp;loc=en_US"
 
+# Gems
+gems: [jekyll-paginate]
+
 # Site Settings
 url: http://joshfrankel.me/blog
 imgurl: http://joshfrankel.me
@@ -25,9 +28,6 @@ env: production
 # Plugins
 markdown: redcarpet
 highlighter: rouge
-
-# Gems
-gems: [jekyll-paginate]
 
 # Octopress
 post_ext: html

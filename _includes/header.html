@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
-        <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160}}">
+        <meta name="description" content="{{ page.excerpt | strip_html | remove: '"' | truncate: 160}}">
         <meta name="keywords" content="{{ page.categories }}, {% for tag in page.tags %}{{ tag }}{% if forloop.index != forloop.length %},&nbsp;{% endif %}{% endfor %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

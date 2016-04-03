@@ -1,21 +1,23 @@
 ---
 layout: post
-title: "Jedi or Sith Lord: Ruby's inject method"
-date: 2016-04-02T14:21:18-05:00
+title: Jedi or Sith Lord: Ruby's inject method
 categories:
 - enumerables
 tags:
-- ruby
+- Ruby
+published: true
 ---
 
 <p>"Remember, a Jedi's strength flows from the Force."</p>
-<p>The ruby inject method is a powerful ally in a jedi (ruby) master's arsenal. It is wielded easily to those who train with it and mastered by a jedi with both knowledge of the light and dark side of the force. The light side of inject involves the different usages for the method as well as the basic format of it. The dark side involves inject's power using symbol#to_proc shortcut methods.</p>
+<p itemprop="description">The ruby inject method is a powerful ally in a jedi (ruby) master's arsenal. It is wielded easily to those who train with it and mastered by a jedi with both knowledge of the light and dark side of the force. The light side of inject involves the different usages for the method as well as the basic format of it. The dark side involves inject's power using symbol#to_proc shortcut methods.</p>
 <!--more-->
 <h3>Inject <small>a.k.a. Reduce</small></h3>
 
 <p>The inject method in ruby is a powerful method for reducing (or folding) all the elements of a collection, into a single value. It is commonly known as the reduce or fold method in other programming languages. Ruby provides an alias to reduce via inject.</p>
 <p>Let's walk through a typical use case for the inject method in ruby. I originally thought of this idea after reading <a href="http://www.globalnerdy.com/2008/09/03/enumerating-enumerable-a-cute-trick-for-explaining-inject-reduce-fold/" target="_blank">this awesome post</a>, by Joey Devilla. He uses folding paper to demostrate how inject works. Rather than recreate his post, I've decided to use playing cards to demonstrate another type of explanation.</p>
+
 {% include rich-snippets/article-image src="2016/inject/post-intro-1.jpg" caption="The darkside collection" width="700" height="560" %}
+
 <p>Thought I was done with the Star Wars theme, eh? Not quite.</p>
 <p>If you look at the above picture, I've grabbed five cards out of the deck. For now just assign them number values: 1 for ace, 2 for 2, and so on. Our goal is to calculate the total number of points that we hold in our hand. The cards directly represent our ruby collection that is passed into the block.</p>
 <p>The inject method works by taking values and injecting, or folding, them into themselves. For instance the following code is an example of calculating the sum for the above collection using the inject method.</p>
