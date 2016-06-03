@@ -1,0 +1,35 @@
+---
+layout: post
+title: "Test Driven Development"
+---
+
+## How To
+
+Red - Green - Refactor
+
+Spike - Red - Green - Refactor
+
+## Stages of a good test
+
+* Setup
+* Behavior
+* Verifiy (expectation)
+* Teardown
+
+## Code Smells
+Not hard and fast rules just can impair readability
+Sometimes these are necessary for better organized code
+
+### Mystery Guest
+- Let blocks tend to force devs to search for data
+- Fixtures almost always are mystery guests
+
+### Abstraction level disconnects
+- Going from high level to low level. e.g. Checking css selector and then the database
+
+## The power and perils of mocks and stubs
+Doesn't test actual functionality
+
+## Private methods: What do I test?
+Test the public api implementation of the private method.
+Abstract the method further into a public generic version
