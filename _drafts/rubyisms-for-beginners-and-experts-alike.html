@@ -5,10 +5,26 @@ title: "Rubyisms for Beginners and Experts Alike"
 
 
 <h3>1. Default variable value</h3>
+<p>Also known as memoization, this line of code sets a variable equal to the value
+on the right side unless the variable is already defined. Useful for code that stays the
+same over multiple loops or expensive active record queries.</p>
+{% highlight ruby %}
 my_age ||= 'default'
+{% endhighlight %}
+
+<p>You can even memoize an entire block using <code>being / end</code>.</p>
+{% highlight ruby %}
+memoized ||= begin
+  # A block of code that is reused frequently
+end
+{% endhighlight %}
+
+<p>While a useful feature, be careful when over-memoizing as caching issues can
+become an issue.</p>
 
 <h3>2. Post conditionals</h3>
 my_age = 23 if status == 200
+company_name = Company.first.name unless Company.size == 0
 
 <h3>3. Guard clauses</h3>
 def search

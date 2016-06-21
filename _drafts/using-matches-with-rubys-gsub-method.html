@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Using Matches With Ruby's Gsub Method"
+---
+
+Regex start from the right and work to the left
+
+string.gsub(/((https?:\/\/)?www\.\w+\.\w+)/) { "<a href='#{$1}'>#{$1}</a>" }
+
+  def show_linkified_caption
+    linkified_caption = caption.gsub(url_regex) { "<a href='#{absolute_link($1)}'>#{$1}</a>" }
+    SanitizeHTML.perform(linkified_caption)
+  end
+
+  private
+
+  def url_regex
+    top_level_domains = %w(com org edu net ly gov).join("|")
+    Regexp.new "((^|[^\s])+\.(#{top_level_domains}))"
+  end
+
+  def absolute_link(link)
+    unless link.starts_with?("http")
+      link = "http://#{link}"
+    end
+    link
+  end
+
+
+  Sanitize.fragment(html_string, Sanitize::Config.merge(Sanitize::Config::RELAXED,
+    transformers: [script_whitelist_transformer, iframe_whitelist_transformer],
+    remove_contents: ["script"],
+    attributes: {
+      "a" => Sanitize::Config::RELAXED[:attributes]["a"] + ["target"]
+    }
+  )).html_safe
