@@ -1,0 +1,67 @@
+
+
+Sorting objects in JavaScript isn't exactly intuitive at first glance. Sorting objects
+by values is a little more complex. And sorting objects based on specific criteria
+where some values can be null is tricky to say the least.
+
+Recently, a colleague and I ran into a specific use case where we needed to sort
+the same collection of objects in two seperate ways.
+
+Let's talk about the data we're working with. We have an ActiveRecord collection
+for a few user Assignments. Each Assignment has a specific progress associated
+with it (for tracking where a user's status is currently).
+
+{% highlight ruby %}
+=> [#<Assignment:0x00000006be2638
+  id: 1164821,
+  due_by: nil,
+  created_at: Tue, 26 Jul 2016 11:53:29 EDT -04:00>,
+ #<Assignment:0x00000006be2390
+  id: 1164820,
+  due_by: Sun, 31 Jul 2016 11:53:28 EDT -04:00,
+  created_at: Tue, 26 Jul 2016 11:53:28 EDT -04:00>,
+ #<Assignment:0x00000006be2020
+  id: 1164819,
+  due_by: Wed, 14 Sep 2016 11:53:28 EDT -04:00,
+  created_at: Tue, 26 Jul 2016 11:53:28 EDT -04:00,
+  ]
+
+=> #<Progress:0x0000000fc31220
+ id: 1610229,
+ lesson_id: 38799,
+ user_id: 691198,
+ score: nil,
+ started_at: nil,
+ completed_at: nil,
+ created_at: Tue, 26 Jul 2016 11:53:38 EDT -04:00,
+ updated_at: Tue, 26 Jul 2016 11:53:38 EDT -04:00,
+ deleted_at: nil,
+ grade_pending: false,
+ source: 0,
+ latest: true>
+{% end highlight %}
+
+
+getIncompleteAssignments() {
+  return this.getAllIncompleAssignments()
+    .filter(a => a.progress.dueDate)
+    .sort(this.sortByProgressKey('dueDate'))
+    .concat(
+      this.getAllIncompleAssignments()
+        .filter(a => !a.progress.dueDate)
+        .sort(this.sortByProgressKey('assignedAt', true))
+    );
+}
+
+sortByProgressKey(key, reverse = false) {
+  return (current, next) => {
+    if (_.isNull(current.progress[key]) || _.isNull(next.progress[key])) {
+      return 1;
+    } else if (current.progress[key] === next.progress[key]) {
+      return 0;
+    } else {
+      comparison = current.progress[key] - next.progress[key];
+      return reverse ? comparison * -1 : comparison;
+    }
+  };
+}

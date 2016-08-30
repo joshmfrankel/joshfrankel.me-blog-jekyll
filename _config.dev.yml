@@ -20,7 +20,7 @@ url: http://localhost:4000
 imgurl: http://localhost:4000/img
 paginate: 10
 paginate_path: "/page/:num/"
-permalink: /:year/:categories/:title
+permalink: /:year/:categories/:title/
 excerpt_separator: <!--more-->
 
 env: development

@@ -1,0 +1,24 @@
+Handy Sublime shortcuts:
+--- ✄ -----------------------
+
+ ☐ ctrl+1 - Go to pane number 1
+ ☐ alt+1 - Focus on tab number 1
+ ☐ ctrl+shift+1 - Send tab to pane number 1
+ ☐ ctrl+k, ctrl+b - Toggle sidebar
+ ☐ ctrl+shift+k - Delete line
+ ☐ ctrl+m - Go to ending bracket
+ ☐ ctrl+shift+up/down - Transpose line with preceding or postceding line
+ ☐ ctrl+j - Join lines together
+ ☐ ctrl+l - Split cursor to multiple lines
+ ☐ ctrl+r - Goto method
+ ☐ ctrl+shift+r - Goto method in project
+ ☐ ctrl+g - Goto line
+ ☐ ctrl+p - Fuzzy search files
+ ☐ ctrl+shift+p - Command Palette
+ ☐ f12 - Go to symbol (Classname)
+ ☐ alt+shift+1 - Change Layout
+ ☐ ctrl+h - Find and replace in file
+ ☐ ctrl+` - Toggle console
+ ☐ ctrl+shift+f - Find in Project
+   ☐ def function_name
+   ☐ regex
