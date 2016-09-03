@@ -1,6 +1,12 @@
 ---
 layout: post
-title: "Custom Named Belongs_to Associations in Rails"
+title: "Custom Named Belongs_to Associations in Rails with foreign key constraints"
+date: 2016-09-01T09:45:46-04:00
+categories:
+- tutorials
+tags:
+- Ruby on Rails
+- ActiveRecord
 ---
 
 <p itemprop="description">Associations are great in Rails. There is a ton of
@@ -49,8 +55,7 @@ class Journal < ActiveRecord::Base
 end
 
 user = User.new(...)
-Journal.create(creator: user) # Check this out! Rails magic allows us to pass in
-a user as a creator
+Journal.create(creator: user) # Check this out! Rails magic allows us to pass in a user as a creator
 {% endhighlight %}
 
 <p>Our model now responds to the column name creator the same way it would to a
