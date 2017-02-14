@@ -226,7 +226,7 @@ programmer.clients.create(name: 'Mr. Nic Cage')
 <h4>Existing database schemas</h4>
 <p>The best use case for a HABTM association is when you are working with an already built database. For some reason maybe the <code>has_many :through</code> association just isn't going to work with the existing structure. Or maybe the system is already utilizing a custom HABTM association and removing it could irrevocably break parts of the system.</p>
 <p>A little dramatic I know.</p>
-<p>These sort of cases typically happen with legacy applications as HATBM is an older feature of Rails. With some good refactoring they could be removed from the system, given there is a good suite of tests configured.</p>
+<p>These sort of cases typically happen with legacy applications as HABTM is an older feature of Rails. With some good refactoring they could be removed from the system, given there is a good suite of tests configured.</p>
 <h4>Recommended usage</h4>
 <blockquote class="floating-quote floating-quote-right"><div class="page-header">RailsGuides</div> "The simplest rule of thumb is that you should set up a has_many :through relationship if you need to work with the relationship model as an independent entity. If you don't need to do anything with the relationship model, it may be simpler to set up a has_and_belongs_to_many relationship (though you'll need to remember to create the joining table in the database).<br /><br />
 You should use has_many :through if you need validations, callbacks, or extra attributes on the join model."</blockquote>
